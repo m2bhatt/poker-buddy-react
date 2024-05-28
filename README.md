@@ -1,8 +1,126 @@
-# React + Vite
+# Poker Buddy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This app is a poker trainer that helps new players check the probability of their Poker hands. The user can select the cards they're dealt with, and check their odds of creating a specific Poker hand against the cards on the board. 
+<!--What is your app? Brief description in a couple of sentences.-->
 
-Currently, two official plugins are available:
+### Problem
+As a new poker player, it can be overwhelming to understand the different Poker hands and their order of winning. It's also hard to calculate the probability of the different Poker hands in a short span of time since generally you only have a few seconds to decide if you want to bet, fold or raise during your turn. 
+<!--Why is your app needed? Background information around any pain points or other reasons.-->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### User Profile
+Users who enjoy playing poker online and are continuing to learn the order of Poker hands, and the probability of hands possible given what's in their hand vs what's on the board, and the potential hands of other players given the cards on the board. 
+<!--Who will use your app? How will they use it? Any special considerations that your app must take into account.-->
+
+### Features
+1. As a user, I should be able to sign up. 
+2. As a user, I should be able to login if I already have an account. 
+2. As a user, I should be able to see all the cards in a deck. 
+2. As a user, I should be able to see the order of the different Poker hands.
+3. As a user, I should be able to select which cards are in my hand, and which cards are on the board. 
+4. As a user, I should be able to see the probability of Poker hands once I have selected the cards in my hand, and the first draw of 3 hands on the board. 
+5. As a user, I should be able to see the probability of Poker hands once other cards are revealed. 
+6. As a user, I should be able to select the outcome of my play (fold, win, draw). 
+7. As a user, I should be able to save my hand, hands on the board, and the outcome of my play.
+8. As a user, I should be able to reset the board before each round. 
+9. As a user, I should be able to delete a previously saved round from my accounts page. 
+
+## Implementation
+
+### Tech Stack
+1. React 
+2. SCSS 
+2. Express
+3. MySQL
+4. JWT
+5. Client Libraries - react, react-router, axios
+6. Server libraries - knex, express, 
+7. Poker probability library 
+
+<!--List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.-->
+
+### APIs
+No external APIs will be used in the MVP. It will use local server to fetch data. 
+List any external sources of data that will be used in your app.
+
+### Sitemap
+1. Signup Page
+2. Login Page
+2. Poker Trainer Page
+3. Account page that stores all the saved plays. 
+
+<!--List the pages of your app with brief descriptions. You can show this visually, or write it out.-->
+
+### Mockups
+
+Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
+
+### Data
+
+![Data Structure](/readme_images/Data_Structure.png)
+
+The `playing_cards` and `table_cards` will store an array of objects with they keys: `value`, `suit` and `inHand`. 
+
+### Endpoints
+Users:
+1. GET endpoint to retrieve the user information for logging in. 
+
+Hands:
+1. GET endpoint to retrieve the array of saved hands. 
+2. POST endpoint to save the data to the user's account. 
+3. DELETE endpoint to delete saved hands from user's account. 
+
+<!--List endpoints that your server will implement, including HTTP methods, parameters, and example responses.-->
+
+### Auth
+
+1. JWT for client side authentication. 
+2. TODO : Server side auth
+
+## Roadmap
+
+### Foundations
+1. Create client side directory with React, set up routes and boiletplate pages and components. 
+2. Create server side directory with Express, set up routes and seed data for users and hands.
+3. Create and run migrations using the seed data. 
+4. Create and initialize both client and server side Github repos. 
+5. Create a chart to outline states, component relationships, and API requests. 
+
+### Feature Build
+
+1. **Sign Up / Login Functionality** (~3 days)
+* Implement SWT to add authentication for users to sign up and login.
+* Create and style the signup and login page. 
+* Create and style the navigation section. 
+
+2. **Build: Poker Trainer Page** (~4 days)
+* Build components to render the Poker Hands, Board, and Deck sections. 
+* Style components for the page. 
+* Implement active state and styling to reflect the active styling. 
+* Implement functionality to calculate the probability of poker hands given the player's hand, and cards on the board. 
+* Add axios requests to post data to user's account. 
+
+3. **Build: Account Page** (~3 days)
+* Create the account page components
+* Implement end point to retrieve saved cards. 
+* Style the Account Page 
+
+4. **Bug Fixes** (~3 days)
+* Test all functionality with different test cases 
+* Fix all styling issues 
+
+5. **Presentation**
+* Create assets for demo day
+* Upload assets for demo day 
+* DEMO DAY!
+
+Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
+
+## Nice-to-haves
+1. Animation on cards when they're saved. 
+2. Add other players to the board
+3. Ability to write notes 
+4. Ability to sort your saved plays by date and outcome 
+5. Ability for the user to retrieve cards from their account to the poker trainer page to review the probability 
+
+

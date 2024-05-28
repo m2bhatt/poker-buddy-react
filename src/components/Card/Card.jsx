@@ -1,0 +1,40 @@
+import "./Card.scss";
+import heartsIcon from "../../assets/icons/hearts.png"
+import clubsIcon from "../../assets/icons/clubs.png";
+import diamondsIcon from "../../assets/icons/diamonds.png";
+import spadesIcon from "../../assets/icons/spades.png";
+
+const suitIcons = {
+  "Hearts": heartsIcon,
+  "Clubs": clubsIcon,
+  "Diamonds": diamondsIcon,
+  "Spades": spadesIcon
+}
+
+
+const Card = ({ value, suit, handleOnClick }) => {
+  const icon = suitIcons[suit];
+
+  return (
+    <article className="card">
+      <div className="card__container" onClick={() => handleOnClick({value, suit})}>
+        <p className="card__value">{value}</p>
+        <img src={icon} alt="" className="card__icon"/>
+      </div>
+    </article>
+  );
+};
+
+export default Card;
+
+// return (
+//   <article className="card">
+//     {!buttonClicked && (
+//       <button className="card__button" onClick={handleOnClick}>
+//         <p className="card__value">{value}</p>
+//         <p className="card__suit">{suit}</p>
+//       </button>
+//     )}
+//   </article>
+// );
+// };
