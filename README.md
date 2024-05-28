@@ -1,7 +1,7 @@
 # Poker Buddy
 
 ## Overview
-This app is a poker trainer that helps new players check the probability of their Poker hands. The user can select the cards they're dealt with, and check their odds of creating a specific Poker hand against the cards on the board. 
+This app is a poker trainer that helps new players check the probability of their hands against the ranked Poker hands set. The user can select the cards they're dealt with, and check their odds of creating a specific Poker hand against the cards on the board. 
 <!--What is your app? Brief description in a couple of sentences.-->
 
 ### Problem
@@ -21,6 +21,8 @@ Users who enjoy playing poker online and are continuing to learn the order of Po
 4. As a user, I should be able to see the probability of Poker hands once I have selected the cards in my hand, and the first draw of 3 hands on the board. 
 5. As a user, I should be able to see the probability of Poker hands once other cards are revealed. 
 6. As a user, I should be able to select the outcome of my play (fold, win, draw). 
+
+### Stretch Goals   
 7. As a user, I should be able to save my hand, hands on the board, and the outcome of my play.
 8. As a user, I should be able to reset the board before each round. 
 9. As a user, I should be able to delete a previously saved round from my accounts page. 
@@ -29,37 +31,44 @@ Users who enjoy playing poker online and are continuing to learn the order of Po
 
 ### Tech Stack
 1. React 
-2. SCSS 
+2. Sass 
 2. Express
 3. MySQL
 4. JWT
 5. Client Libraries - react, react-router, axios
-6. Server libraries - knex, express, 
-7. Poker probability library 
-
-<!--List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.-->
+6. Server libraries - knex, express, dotenv, bcryptjs
+7. Poker probability library (researching)
 
 ### APIs
-No external APIs will be used in the MVP. It will use local server to fetch data. 
-List any external sources of data that will be used in your app.
+No external APIs will be used in the MVP. The app will use local server to fetch data from mySQL databases. 
 
 ### Sitemap
-1. Signup Page
-2. Login Page
-2. Poker Trainer Page
-3. Account page that stores all the saved plays. 
+1. Signup Page  
+This page allows user to sign up to save their plays. 
+
+2. Login Page  
+This page allows users to login if they have an existing account. 
+
+3. Poker Trainer Page  
+This is the main page of the app, with the functionality to review their probability.
+
+4. Account page that stores all the saved plays.  
+This page saves all your played hands if you chose to save them from the poker trainer page. 
 
 <!--List the pages of your app with brief descriptions. You can show this visually, or write it out.-->
 
 ### Mockups
 
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
+![Sign up Page](/readme_images/Signup_Page.png)
+
+![Trainer Page](/readme_images/wip.png);
+
 
 ### Data
 
 ![Data Structure](/readme_images/Data_Structure.png)
 
-The `playing_cards` and `table_cards` will store an array of objects with they keys: `value`, `suit` and `inHand`. 
+The `playing_cards` and `table_cards` will store an array of objects with the keys: `value`, `suit` and `inHand`. 
 
 ### Endpoints
 Users:
@@ -74,8 +83,7 @@ Hands:
 
 ### Auth
 
-1. JWT for client side authentication. 
-2. TODO : Server side auth
+1. JWT for client and server side authentication.
 
 ## Roadmap
 
@@ -113,8 +121,6 @@ Hands:
 * Create assets for demo day
 * Upload assets for demo day 
 * DEMO DAY!
-
-Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
 
 ## Nice-to-haves
 1. Animation on cards when they're saved. 

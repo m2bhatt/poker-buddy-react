@@ -1,0 +1,16 @@
+.pokerhand {
+  display: flex;
+
+  &__title {
+    width: 41%;
+    margin: 0;
+  }
+  &__cards {
+    display: flex;
+  }
+
+  &__probability-list {
+    list-style-type: none;
+    display: flex;
+  }
+}
