@@ -12,12 +12,12 @@ const suitIcons = {
 }
 
 
-const Card = ({ value, suit, handleOnClick }) => {
+const Card = ({ value, suit, handleOnClick, isActive }) => {
   const icon = suitIcons[suit];
 
   return (
-    <article className="card">
-      <div className="card__container" onClick={() => handleOnClick({value, suit})}>
+    <article className="card" >
+      <div className={isActive ? "card__container" : "card__container card__container--inactive"} onClick={() => handleOnClick({value, suit})}>
         <p className="card__value">{value}</p>
         <img src={icon} alt="" className="card__icon"/>
       </div>

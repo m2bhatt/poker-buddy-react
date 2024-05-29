@@ -35,9 +35,16 @@ Users who enjoy playing poker online and are continuing to learn the order of Po
 2. Express
 3. MySQL
 4. JWT
-5. Client Libraries - react, react-router, axios
-6. Server libraries - knex, express, dotenv, bcryptjs
-7. Poker probability library (researching)
+5. Client Libraries:  
+a. react  
+b. react-router  
+c. axios 
+6. Server libraries  
+a. knex  
+b. express  
+c. dotenv  
+d. bcryptjs
+7. Poker probability library
 
 ### APIs
 No external APIs will be used in the MVP. The app will use local server to fetch data from mySQL databases. 
@@ -50,18 +57,25 @@ This page allows user to sign up to save their plays.
 This page allows users to login if they have an existing account. 
 
 3. Poker Trainer Page  
-This is the main page of the app, with the functionality to review their probability.
+This is the main page of the app, with the functionality to select their hand,save their hand, and review their probability.
 
 4. Account page that stores all the saved plays.  
 This page saves all your played hands if you chose to save them from the poker trainer page. 
 
-<!--List the pages of your app with brief descriptions. You can show this visually, or write it out.-->
-
 ### Mockups
+> The mockups are subject to change including font style, colour palette and images.
 
-![Sign up Page](/readme_images/Signup_Page.png)
+| ![Sign up Page](/readme_images/Signup_Page.png) |
+| :--: |
+| *Sign Up/Login Page* |
+| Both Sign up and Login pages will have a similar layout. |
 
-![Trainer Page](/readme_images/wip.png);
+
+
+| ![Trainer Page](/readme_images/wip.png) |
+| :--: |
+| *Trainer Page* |
+| This will be the main page of the site |
 
 
 ### Data
@@ -72,7 +86,9 @@ The `playing_cards` and `table_cards` will store an array of objects with the ke
 
 ### Endpoints
 Users:
-1. GET endpoint to retrieve the user information for logging in. 
+1. POST endpoint to create a new user. 
+2. POST endpoint to verify a returning user. 
+2. GET endpoint to retrieve the user information for logging in. 
 
 Hands:
 1. GET endpoint to retrieve the array of saved hands. 

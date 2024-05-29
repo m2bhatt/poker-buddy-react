@@ -12,11 +12,10 @@ const PokerHand = ({ name, cards }) => {
       <p className="pokerhand__title">{ name }</p>
       <div className="pokerhand__cards">
         {cards.map((card) => (
-          <Card key={`${card.value}${card.suit}`} value={card.value} suit={card.suit} />
+          <Card key={`${card.value}${card.suit}`} value={card.value} suit={card.suit} isActive={card.isActive}/>
         ))}
       </div>
       <ul className="pokerhand__probability-list">
-        <li className="pokerhand__probability-item">44%</li>
         <li className="pokerhand__probability-item">44%</li>
       </ul>
     </div>

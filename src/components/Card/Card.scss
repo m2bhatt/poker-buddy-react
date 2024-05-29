@@ -8,6 +8,11 @@
     padding-left: 0;
     margin-bottom: 4px;
     margin-left: 4px;
+
+    &--inactive {
+      background-color: gray;
+      opacity: 50%;
+    }
   }
 
   &__value {

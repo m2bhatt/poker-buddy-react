@@ -2,91 +2,91 @@
   {
     "name": "Royal Flush",
     "cards": [
-      { "suit": "Hearts", "value": "A" },
-      { "suit": "Hearts", "value": "K" },
-      { "suit": "Hearts", "value": "Q" },
-      { "suit": "Hearts", "value": "J" },
-      { "suit": "Hearts", "value": "10" }
+      { "suit": "Hearts", "value": "A", "isActive": true },
+      { "suit": "Hearts", "value": "K", "isActive": true },
+      { "suit": "Hearts", "value": "Q", "isActive": true },
+      { "suit": "Hearts", "value": "J", "isActive": true },
+      { "suit": "Hearts", "value": "10", "isActive": true }
     ]
   },
   {
     "name": "Straight Flush",
     "cards": [
-      { "suit": "Clubs", "value": "J" },
-      { "suit": "Clubs", "value": "10" },
-      { "suit": "Clubs", "value": "9" },
-      { "suit": "Clubs", "value": "8" },
-      { "suit": "Clubs", "value": "7" }
+      { "suit": "Clubs", "value": "J", "isActive": true },
+      { "suit": "Clubs", "value": "10", "isActive": true },
+      { "suit": "Clubs", "value": "9", "isActive": true },
+      { "suit": "Clubs", "value": "8", "isActive": true },
+      { "suit": "Clubs", "value": "7", "isActive": true }
     ]
   },
   {
     "name": "Four of a Kind",
     "cards": [
-      { "suit": "Hearts", "value": "9" },
-      { "suit": "Clubs", "value": "9" },
-      { "suit": "Diamonds", "value": "9" },
-      { "suit": "Spades", "value": "9" },
-      { "suit": "Clubs", "value": "K" }
+      { "suit": "Hearts", "value": "9", "isActive": true },
+      { "suit": "Clubs", "value": "9", "isActive": true },
+      { "suit": "Diamonds", "value": "9", "isActive": true },
+      { "suit": "Spades", "value": "9", "isActive": true },
+      { "suit": "Clubs", "value": "K", "isActive": false }
     ]
   },
   {
     "name": "Full House",
     "cards": [
-      { "suit": "Hearts", "value": "K" },
-      { "suit": "Clubs", "value": "K" },
-      { "suit": "Diamonds", "value": "K" },
-      { "suit": "Spades", "value": "5" },
-      { "suit": "Hearts", "value": "5" }
+      { "suit": "Hearts", "value": "K", "isActive": true },
+      { "suit": "Clubs", "value": "K", "isActive": true },
+      { "suit": "Diamonds", "value": "K", "isActive": true },
+      { "suit": "Spades", "value": "5", "isActive": true },
+      { "suit": "Hearts", "value": "5", "isActive": true }
     ]
   },
   {
     "name": "Flush",
     "cards": [
-      { "suit": "Diamonds", "value": "J" },
-      { "suit": "Diamonds", "value": "8" },
-      { "suit": "Diamonds", "value": "5" },
-      { "suit": "Diamonds", "value": "3" },
-      { "suit": "Diamonds", "value": "2" }
+      { "suit": "Diamonds", "value": "J", "isActive": true },
+      { "suit": "Diamonds", "value": "8", "isActive": true },
+      { "suit": "Diamonds", "value": "5", "isActive": true },
+      { "suit": "Diamonds", "value": "3", "isActive": true },
+      { "suit": "Diamonds", "value": "2", "isActive": true }
     ]
   },
   {
     "name": "Straight",
     "cards": [
-      { "suit": "Diamonds", "value": "10" },
-      { "suit": "Clubs", "value": "9" },
-      { "suit": "Diamonds", "value": "8" },
-      { "suit": "Hearts", "value": "7" },
-      { "suit": "Spades", "value": "6" }
+      { "suit": "Diamonds", "value": "10", "isActive": true },
+      { "suit": "Clubs", "value": "9", "isActive": true },
+      { "suit": "Diamonds", "value": "8", "isActive": true },
+      { "suit": "Hearts", "value": "7", "isActive": true },
+      { "suit": "Spades", "value": "6", "isActive": true }
     ]
   },
   {
     "name": "Three of a Kind",
     "cards": [
-      { "suit": "Hearts", "value": "7" },
-      { "suit": "Diamonds", "value": "7" },
-      { "suit": "Clubs", "value": "7" },
-      { "suit": "Diamonds", "value": "6" },
-      { "suit": "Spades", "value": "2" }
+      { "suit": "Hearts", "value": "7", "isActive": true },
+      { "suit": "Diamonds", "value": "7", "isActive": true },
+      { "suit": "Clubs", "value": "7", "isActive": true },
+      { "suit": "Diamonds", "value": "6", "isActive": false },
+      { "suit": "Spades", "value": "2", "isActive": false }
     ]
   },
   {
     "name": "Two Pair",
     "cards": [
-      { "suit": "Diamonds", "value": "J" },
-      { "suit": "Spades", "value": "J" },
-      { "suit": "Hearts", "value": "3" },
-      { "suit": "Clubs", "value": "3" },
-      { "suit": "Diamonds", "value": "7" }
+      { "suit": "Diamonds", "value": "J", "isActive": true },
+      { "suit": "Spades", "value": "J", "isActive": true },
+      { "suit": "Hearts", "value": "3", "isActive": true },
+      { "suit": "Clubs", "value": "3", "isActive": true },
+      { "suit": "Diamonds", "value": "7", "isActive": false }
     ]
   },
   {
     "name": "High Card",
     "cards": [
-      { "suit": "Hearts", "value": "K" },
-      { "suit": "Diamonds", "value": "5" },
-      { "suit": "Spades", "value": "J" },
-      { "suit": "Hearts", "value": "3" },
-      { "suit": "Clubs", "value": "3" }
+      { "suit": "Hearts", "value": "K", "isActive": true },
+      { "suit": "Diamonds", "value": "5", "isActive": false },
+      { "suit": "Spades", "value": "J", "isActive": false },
+      { "suit": "Hearts", "value": "3", "isActive": false },
+      { "suit": "Clubs", "value": "3", "isActive": false }
     ]
   }
 ]

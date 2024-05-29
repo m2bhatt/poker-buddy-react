@@ -14,7 +14,7 @@ const DeckColumn = ({ deck, suit }) => {
         if (card.suit != suit) return;
 
         return (
-          <Card key={index} value={card.value} suit={card.suit} index={index} handleOnClick={handleOnClick} />
+          <Card key={index} value={card.value} suit={card.suit} isActive={true} index={index} handleOnClick={handleOnClick} />
         );
       })}
     </div>
