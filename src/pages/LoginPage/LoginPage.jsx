@@ -3,8 +3,8 @@ import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_LOCALHOST;
 
-const SignUpPage = () => {
-  const [signedUp, setSignedUp] = useState(false);
+const LoginPage = ({ setToken }) => {
+  const [signedIn, setSignedIn] = useState(false)
   const [error, setError] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -23,15 +23,18 @@ const SignUpPage = () => {
   //   alert("Missing information. Try again.");
   // }
 
-  async function postUser() {
+  async function getUser() {
     try {
       const user = {
         username,
         password,
       };
-      const postUserRequest = await axios.post(`${API_URL}/signup`, user);
-      setSignedUp(true);
-      console.log(user);
+      const getUserRequest = await axios.post(`${API_URL}/login`, user);
+      const { token } = getUserRequest;
+      localStorage.setItem("token", token);
+      setToken(token);
+      setSignedIn(true);
+      console.log(user, token);
     } catch (error) {
       console.error("Error while posting video", error);
       setError("Error in signing up");
@@ -40,16 +43,16 @@ const SignUpPage = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    postUser();
+    getUser();
   };
 
   return (
     <>
       <div>
-        <h1>Sign Up Page</h1>
+        <h1>Login Page</h1>
       </div>
 
-      <form onSubmit={handleFormSubmit} className="signuppage">
+      <form onSubmit={handleFormSubmit} className="LoginPage">
         <label htmlFor="username">
           {" "}
           Username
@@ -73,7 +76,7 @@ const SignUpPage = () => {
         </label>
 
         <button>Sign Up</button>
-        {signedUp && <div>Sign up successful, please log in</div>}
+        {signedIn && <div>Login successful</div>}
         {error && <div>{error}</div>}
      
       </form>
@@ -81,5 +84,5 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
-   //TODO  add the login conditions 
+export default LoginPage;
+   //TODO redirect to trainer page after
