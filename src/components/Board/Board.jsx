@@ -1,28 +1,13 @@
-import Card from "../Card/Card";
-import { useEffect, useState } from "react";
 import "./Board.scss";
+import PocketHands from "../PocketHands/PocketHands";
+import BoardHands from "../BoardHands/BoardHands";
 
-const Board = ({ card, setCard, pocketHand, setPocketHand }) => {
-
-  const handleOnClick = () => {
-    const localCard = JSON.parse(localStorage.getItem("card"));
-    setPocketHand({value: localCard.value, suit: localCard.suit})
-  };
-
-  if(!pocketHand) {
-    return <div>loading..</div>
-  }
-
-  useEffect(() => {
-    handleOnClick();
-  },[])
-
+const Board = ({ pocketHand, setPocketHand }) => {
   return (
     <main className="board">
-      <div onClick={handleOnClick}>
-        <Card value={pocketHand.value} suit={pocketHand.suit} handleOnClick={handleOnClick}/>
-        <Card value={pocketHand.value} suit={pocketHand.suit} handleOnClick={handleOnClick}/>
-      </div>
+      < BoardHands pocketHand={pocketHand} setPocketHand={setPocketHand} className={`board__board-hands`}/>
+      <div className="board__image"></div> 
+      < PocketHands pocketHand={pocketHand} setPocketHand={setPocketHand} className={`board__pocket-hands`}/>
     </main>
   )
 };

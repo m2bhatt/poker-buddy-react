@@ -1,11 +1,11 @@
 import Card from "../Card/Card";
 import "./DeckColumn.scss";
 
-const DeckColumn = ({ deck, suit }) => {
+const DeckColumn = ({ deck, suit, pocketHand, setPocketHand }) => {
 
   const handleOnClick = (card) => {
     const cardData = { value: card.value, suit: card.suit };
-    localStorage.setItem("card", JSON.stringify(cardData));
+    setPocketHand(cardData);
   };
 
   return (

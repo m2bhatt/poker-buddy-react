@@ -1,4 +1,31 @@
 .board {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   width: 30%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  &__image {
+    background-color: green;
+    height: 120px;
+    border-radius: 60px;
+    position: relative;
+    margin-top: 2rem;
+    z-index: 0;
+  }
+
+  &__board-hands {
+    position: absolute;
+    top: 20%;
+    left: 58%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &__pocket-hands {
+    position: absolute;
+    top: 27%;
+    left: 55%;
+    z-index: 1;
+
+  }
 }

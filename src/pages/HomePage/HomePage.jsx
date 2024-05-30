@@ -6,8 +6,7 @@ import "./HomePage.scss";
 
 const HomePage = () => {
   const [deck, setDeck] = useState();
-  const [card, setCard] = useState({});
-  const [pocketHand, setPocketHand] = useState([]);
+  const [pocketHand, setPocketHand] = useState({});
 
   useEffect(() => {
     setDeck(createDeck());
@@ -19,11 +18,10 @@ const HomePage = () => {
 
   return (
     <>
-      <h1>This is the Trainer page </h1>
       <div className="trainer-page">
         <PokerHandList />
-        <Board card={card} setCard={setCard} pocketHand={pocketHand} setPocketHand={setPocketHand} />
-        <Deck deck={deck} />
+        <Board pocketHand={pocketHand} setPocketHand={setPocketHand} />
+        <Deck deck={deck} pocketHand={pocketHand} setPocketHand={setPocketHand}/>
       </div>
     </>
   );
