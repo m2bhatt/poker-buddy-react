@@ -1,16 +1,15 @@
 import { useState } from "react";
-import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "./RegisterForm.scss";
+import { Link } from "react-router-dom";
 
 const API_URL = import.meta.env.VITE_LOCALHOST;
 
-const LoginPage = ({ setToken }) => {
-  const [signedIn, setSignedIn] = useState(false)
+const RegisterForm = () => {
+  const [signedUp, setSignedUp] = useState(false);
   const [error, setError] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  const navigate = useNavigate();
 
   const handleChangeUsername = (event) => {
     const newUsername = event.target.value;
@@ -21,73 +20,65 @@ const LoginPage = ({ setToken }) => {
     const newPassword = event.target.value;
     setPassword(newPassword);
   };
-  //TODO: Set up conditions for empty fields. 
+  //TODO: Set up conditions for empty fields.
   // if (!username || !password) {
   //   alert("Missing information. Try again.");
   // }
 
-  async function getUser() {
+  async function postUser() {
     try {
       const user = {
         username,
         password,
       };
-      const getUserRequest = await axios.post(`${API_URL}/users/login`, user);
-      const { token } = getUserRequest;
-      localStorage.setItem("token", token);
-      setToken(token);
-      setSignedIn(true);
-      setError("")
-      navigate("/trainer");
-      console.log(user, token);
+      const postUserRequest = await axios.post(`${API_URL}/users/signup`, user);
+      setError("");
+      setSignedUp(true);
     } catch (error) {
-      console.error("Error while signing in", error);
+      console.error("Error while creating a user", error);
       setError("Error in signing up");
     }
   }
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    getUser();
+    postUser();
   };
 
   return (
     <>
-      <div>
-        <h1>Login Page</h1>
-      </div>
-
-      <form onSubmit={handleFormSubmit} className="LoginPage">
-        <label htmlFor="username">
-          {" "}
+      <form onSubmit={handleFormSubmit} className="form">
+        <label htmlFor="username" className="form__label">
           Username
           <input
             type="text"
             name="username"
             value={username}
+            className="form__input"
+            placeholder="Enter your username"
             onChange={handleChangeUsername}
           />
         </label>
 
-        <label htmlFor="password">
-          {" "}
+        <label htmlFor="password" className="form__label">
           Password
           <input
             type="password"
             name="password"
             value={password}
+            className="form__input"
+            placeholder="Enter your password"
             onChange={handleChangePassword}
           />
         </label>
 
-        <button>Log in</button>
-        {signedIn && <div>Login successful</div>}
+        <button>Sign Up</button>
+        {signedUp && <div>Sign up successful, please <Link to="/login">log in</Link></div>}
         {error && <div>{error}</div>}
-     
       </form>
     </>
   );
 };
 
-export default LoginPage;
-   //TODO set appropriate error messages to the user
+export default RegisterForm;
+//TODO  add the login conditions

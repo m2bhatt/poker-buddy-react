@@ -21,8 +21,7 @@ const Board = ({ card, setCard, pocketHand, setPocketHand }) => {
     <main className="board">
       <div onClick={handleOnClick}>
         <Card value={pocketHand.value} suit={pocketHand.suit} handleOnClick={handleOnClick}/>
-        <Card value={card.value} suit={card.suit} handleOnClick={handleOnClick}/>
-        {/* <Card value={activeHandValue} suit={activeHandSuit} handleOnClick={handleOnClick}/> */}
+        <Card value={pocketHand.value} suit={pocketHand.suit} handleOnClick={handleOnClick}/>
       </div>
     </main>
   )

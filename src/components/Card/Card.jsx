@@ -26,15 +26,3 @@ const Card = ({ value, suit, handleOnClick, isActive }) => {
 };
 
 export default Card;
-
-// return (
-//   <article className="card">
-//     {!buttonClicked && (
-//       <button className="card__button" onClick={handleOnClick}>
-//         <p className="card__value">{value}</p>
-//         <p className="card__suit">{suit}</p>
-//       </button>
-//     )}
-//   </article>
-// );
-// };
