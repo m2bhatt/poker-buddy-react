@@ -2,15 +2,12 @@
 
 ## Overview
 This app is a poker trainer that helps new players check the probability of their hands against the ranked Poker hands set. The user can select the cards they're dealt with, and check their odds of creating a specific Poker hand against the cards on the board. 
-<!--What is your app? Brief description in a couple of sentences.-->
 
 ### Problem
 As a new poker player, it can be overwhelming to understand the different Poker hands and their order of winning. It's also hard to calculate the probability of the different Poker hands in a short span of time since generally you only have a few seconds to decide if you want to bet, fold or raise during your turn. 
-<!--Why is your app needed? Background information around any pain points or other reasons.-->
 
 ### User Profile
 Users who enjoy playing poker online and are continuing to learn the order of Poker hands, and the probability of hands possible given what's in their hand vs what's on the board, and the potential hands of other players given the cards on the board. 
-<!--Who will use your app? How will they use it? Any special considerations that your app must take into account.-->
 
 ### Features
 1. As a user, I should be able to sign up. 
@@ -20,7 +17,7 @@ Users who enjoy playing poker online and are continuing to learn the order of Po
 3. As a user, I should be able to select which cards are in my hand, and which cards are on the board. 
 4. As a user, I should be able to see the probability of Poker hands once I have selected the cards in my hand, and the first draw of 3 hands on the board. 
 5. As a user, I should be able to see the probability of Poker hands once other cards are revealed. 
-6. As a user, I should be able to select the outcome of my play (fold, win, draw). 
+6. As a user, I should be able to select the outcome of my play (fold, win). 
 
 ### Stretch Goals   
 7. As a user, I should be able to save my hand, hands on the board, and the outcome of my play.
@@ -72,11 +69,15 @@ This page saves all your played hands if you chose to save them from the poker t
 
 
 
-| ![Trainer Page](/readme_images/wip.png) |
+| ![Trainer Page](/readme_images/Trainer_Page.png) |
 | :--: |
 | *Trainer Page* |
-| This will be the main page of the site |
+| This will be the main page of the site. |
 
+| ![Account Page](/readme_images/Account_Page.png) |
+| :--: |
+| *Account Page* |
+| This will be the account page, which will get populated by the saved hands. |
 
 ### Data
 
@@ -85,21 +86,107 @@ This page saves all your played hands if you chose to save them from the poker t
 The `playing_cards` and `table_cards` will store an array of objects with the keys: `value`, `suit` and `inHand`. 
 
 ### Endpoints
-Users:
-1. POST endpoint to create a new user. 
-2. POST endpoint to verify a returning user. 
+#### Users
+
+**POST /users/signup**  
+- Add a user account  
+
+Parameters:  
+- username   
+- password 
+
+Response
+```
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+}
+```
+
+**POST /users/login**  
+- Login a user  
+
+Parameters:  
+- username   
+- password 
+
+Response
+```
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+}
+```
+
 2. GET endpoint to retrieve the user information for logging in. 
 
-Hands:
-1. GET endpoint to retrieve the array of saved hands. 
-2. POST endpoint to save the data to the user's account. 
-3. DELETE endpoint to delete saved hands from user's account. 
+#### Hands
+**GET /hands/:username** 
+- Retrieve user's saved hands from the hands table 
+Parameters:
+- username 
 
-<!--List endpoints that your server will implement, including HTTP methods, parameters, and example responses.-->
+``` 
+[
+  {
+    "username": "testname", 
+    "player_cards" : {
+      "cards": [
+        {"suit": "hearts", "value": "7", "inHand": true},
+        {"suit": "hearts", "value": "8", "inHand": false}
+      ]
+    },
+    "table_cards" : {
+      "cards": [
+        {"suit": "hearts", "value": "9", "inHand": false}, 
+        {"suit": "spades", "value": "7", "inHand": true}, 
+        {"suit": "hearts", "value": "7", "inHand": true}, 
+        {"suit": "hearts", "value": "7", "inHand": true}, 
+        {"suit": "hearts", "value": "7", "inHand": true}
+      ]
+    },
+    "outcome" : 1,
+    "hand_name: 1
+  },
+  {
+    "username": "testname", 
+    "player_cards" : {
+      "cards": [
+        {"suit": "hearts", "value": "7", "inHand": true},
+        {"suit": "hearts", "value": "8", "inHand": false}
+      ]
+    },
+    "table_cards" : {
+      "cards": [
+        {"suit": "hearts", "value": "9", "inHand": false}, 
+        {"suit": "spades", "value": "7", "inHand": true}, 
+        {"suit": "hearts", "value": "7", "inHand": true}, 
+        {"suit": "hearts", "value": "7", "inHand": true}, 
+        {"suit": "hearts", "value": "7", "inHand": true}
+      ]
+    },
+    "outcome" : 1,
+    "hand_name: 1
+  }
+]
+```
+_The outcome and hand_name will be decoded in the front end to return the appropriate string._
+
+**POST /hands/:username**   
+Save user's cards from the current round to the hands table.
+
+Parameters:
+- username 
+- Player cards
+- Table cards
+- Outcome 
+- Hand Name 
+
+```
+"Sucess! Round saved!"
+```
 
 ### Auth
 
-1. JWT for client and server side authentication.
+1. JWT for authentication. Once logged in, users will be able to see their saved hands within their account. 
 
 ## Roadmap
 
