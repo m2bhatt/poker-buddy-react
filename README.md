@@ -95,11 +95,10 @@ Parameters:
 - username   
 - password 
 
-Response
+Response  
+201 status with a success response. 
 ```
-{
-	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-}
+Success! 
 ```
 
 **POST /users/login**  
@@ -122,7 +121,7 @@ Response
 **GET /hands/:username** 
 - Retrieve user's saved hands from the hands table 
 Parameters:
-- username 
+- user id 
 
 ``` 
 [
