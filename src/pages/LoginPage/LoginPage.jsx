@@ -39,7 +39,6 @@ const LoginPage = ({ setToken }) => {
       setSignedIn(true);
       setError("")
       navigate("/trainer");
-      console.log(user, token);
     } catch (error) {
       console.error("Error while signing in", error);
       setError("Error in signing up");

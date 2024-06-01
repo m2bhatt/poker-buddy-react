@@ -72,7 +72,7 @@ const RegisterForm = () => {
           />
         </label>
 
-        <button>Sign Up</button>
+        <button className="form__button">Sign Up</button>
         {signedUp && <div>Sign up successful, please <Link to="/login">log in</Link></div>}
         {error && <div>{error}</div>}
       </form>

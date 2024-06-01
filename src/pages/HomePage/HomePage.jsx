@@ -6,7 +6,7 @@ import "./HomePage.scss";
 
 const HomePage = () => {
   const [deck, setDeck] = useState();
-  const [pocketHand, setPocketHand] = useState({});
+  const [pocketHand, setPocketHand] = useState([]);
 
   useEffect(() => {
     setDeck(createDeck());

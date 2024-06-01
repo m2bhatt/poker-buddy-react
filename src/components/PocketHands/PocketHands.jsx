@@ -3,31 +3,32 @@ import { useEffect } from "react";
 import "./PocketHands.scss";
 
 const PocketHands = ({ pocketHand, setPocketHand, className }) => {
-  const handleOnClick = () => {
-    setPocketHand(pocketHand);
-  };
+  // const handleOnClick = () => {
+  //   setPocketHand(pocketHand);
+  //   console.log(pocketHand);
+  // };
+
+  console.log(pocketHand);
 
   if (!pocketHand) {
     return <div>loading..</div>;
   }
 
-  useEffect(() => {
-    handleOnClick();
-  }, []);
+  console.log(pocketHand);
 
   return (
     <aside className={`pockethands ${className}`}>
       <Card
-        value={pocketHand.value}
-        suit={pocketHand.suit}
+        value={pocketHand[0] ? pocketHand[0].value : ""}
+        suit={pocketHand[0] ? pocketHand[0].suit : ""}
         isActive="true"
-        handleOnClick={handleOnClick}
+        // handleOnClick={handleOnClick}
       />
       <Card
-        value={pocketHand.value}
-        suit={pocketHand.suit}
+        value={pocketHand[1] ? pocketHand[1].value : ""}
+        suit={pocketHand[1] ? pocketHand[1].suit : ""}
         isActive="true"
-        handleOnClick={handleOnClick}
+        // handleOnClick={handleOnClick}
       />
     </aside>
   );
