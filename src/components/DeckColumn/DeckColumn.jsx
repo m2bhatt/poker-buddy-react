@@ -2,24 +2,23 @@ import { useEffect } from "react";
 import Card from "../Card/Card";
 import "./DeckColumn.scss";
 
-const DeckColumn = ({ deck, suit, pocketHand, setPocketHand }) => {
-
+// new params: targetCardSet, maxLength, onClickHandler ...?
+const DeckColumn = ({ deck, suit, pocketHand, setPocketHand,  boardHand, setBoardHand, activeCardContainer, setActiveCardContainer }) => {
   const handleOnClick = (card) => {
     const cardData = { value: card.value, suit: card.suit };
-    let newHand = [...pocketHand];
+    let newHand;
 
-    if (newHand.length === 0) {
-      newHand = [cardData];
-    } else if 
-      (newHand.length === 1) {
-        newHand = [newHand[0], cardData]
+    if (activeCardContainer === 'pocketHand') {
+      newHand = [...pocketHand, cardData];
+
+      if (newHand.length >= 2) {
+        setActiveCardContainer('boardHand')
       }
-    else {
-      newHand = [newHand[1], cardData]
+      setPocketHand(newHand)
+    } else {
+      newHand = [...boardHand, cardData];
+      setBoardHand(newHand)
     }
-
-    setPocketHand(newHand);
-
   };
 
   return (
@@ -28,7 +27,14 @@ const DeckColumn = ({ deck, suit, pocketHand, setPocketHand }) => {
         if (card.suit != suit) return;
 
         return (
-          <Card key={index} value={card.value} suit={card.suit} isActive={true} index={index} handleOnClick={handleOnClick} />
+          <Card
+            key={index}
+            value={card.value}
+            suit={card.suit}
+            isActive={true}
+            index={index}
+            handleOnClick={handleOnClick}
+          />
         );
       })}
     </div>
@@ -36,19 +42,3 @@ const DeckColumn = ({ deck, suit, pocketHand, setPocketHand }) => {
 };
 
 export default DeckColumn;
-
-//TODO - remove index and use filter
-
-  // cardDataArray.forEach((obj) => {
-    //   if (Object.keys(newHand).length < 3) {
-    //     newHand.unshift(obj);
-    //   } else {
-    //     newHand = [newHand[0], cardData]
-    //     // newHand.shift();
-    //     // newHand.push(obj)
-    //   }
-    // });
-
-    // while (newHand.length > 2) {
-    //   newHand.shift()
-    // }

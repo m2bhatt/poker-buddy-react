@@ -7,6 +7,11 @@ import "./HomePage.scss";
 const HomePage = () => {
   const [deck, setDeck] = useState();
   const [pocketHand, setPocketHand] = useState([]);
+  const [boardHand, setBoardHand] = useState([]);
+  const [activeCardContainer, setActiveCardContainer] = useState("pocketHand");
+
+  console.log("pockethand", pocketHand);
+  console.log("boardHand", boardHand);
 
   useEffect(() => {
     setDeck(createDeck());
@@ -20,16 +25,44 @@ const HomePage = () => {
     <>
       <div className="trainer-page">
         <PokerHandList />
-        <Board pocketHand={pocketHand} setPocketHand={setPocketHand} />
-        <Deck deck={deck} pocketHand={pocketHand} setPocketHand={setPocketHand}/>
+        <Board
+          pocketHand={pocketHand}
+          setPocketHand={setPocketHand}
+          boardHand={boardHand}
+          setBoardHand={setBoardHand}
+          setActiveCardContainer={setActiveCardContainer}
+        />
+        <Deck
+          deck={deck}
+          pocketHand={pocketHand}
+          setPocketHand={setPocketHand}
+          boardHand={boardHand}
+          setBoardHand={setBoardHand}
+          activeCardContainer={activeCardContainer}
+          setActiveCardContainer={setActiveCardContainer}
+        />
       </div>
     </>
   );
 };
 
 const createDeck = () => {
-  const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-  const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+  const values = [
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K",
+    "A",
+  ];
+  const suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
 
   let deck = [];
   for (let suit of suits) {
@@ -38,6 +71,6 @@ const createDeck = () => {
     }
   }
   return deck;
-}
+};
 
 export default HomePage;

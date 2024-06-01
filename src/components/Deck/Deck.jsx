@@ -1,13 +1,33 @@
 import DeckColumn from "../DeckColumn/DeckColumn";
 import "./Deck.scss";
 
-const Deck = ({ deck, pocketHand, setPocketHand }) => {
+const suits = ["Hearts", "Diamonds", "Spades", "Clubs"];
+
+const Deck = ({
+  deck,
+  pocketHand,
+  setPocketHand,
+  boardHand,
+  setBoardHand,
+  activeCardContainer,
+  setActiveCardContainer
+}) => {
   return (
     <aside className="deck">
-      <DeckColumn deck={deck} suit={"Hearts"} pocketHand={pocketHand} setPocketHand={setPocketHand}/>
-      <DeckColumn deck={deck} suit={"Diamonds"} pocketHand={pocketHand} setPocketHand={setPocketHand} />
-      <DeckColumn deck={deck} suit={"Spades"} pocketHand={pocketHand} setPocketHand={setPocketHand} />
-      <DeckColumn deck={deck} suit={"Clubs"} pocketHand={pocketHand} setPocketHand={setPocketHand} />
+      {suits.map((suit) => (
+        <DeckColumn
+          key={suit}
+          deck={deck}
+          suit={suit}
+          pocketHand={pocketHand}
+          setPocketHand={setPocketHand}
+          boardHand={boardHand}
+          setBoardHand={setBoardHand}
+          activeCardContainer={activeCardContainer}
+          setActiveCardContainer={setActiveCardContainer}
+         
+        />
+      ))}
     </aside>
   );
 };

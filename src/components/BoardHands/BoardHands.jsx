@@ -2,53 +2,22 @@ import Card from "../Card/Card";
 import { useEffect } from "react";
 import "./BoardHands.scss";
 
-const BoardHands = ({ pocketHand, setPocketHand, className }) => {
-  const handleOnClick = () => {
-    console.log("board hand");
-  };
-
-  // if (!pocketHand) {
-  //   return <div>loading..</div>;
-  // }
-
-  // useEffect(() => {
-  //   handleOnClick();
-  // }, []);
+const BoardHands = ({ boardHand, className }) => {
+  if (!boardHand) {
+    return <div>loading..</div>;
+  }
 
   return (
     <>
       <aside className={`boardhands ${className}`}>
-        <Card
-          value={pocketHand.value}
-          suit={pocketHand.suit}
-          isActive="true"
-          handleOnClick={handleOnClick}
-        />
-        <Card
-          value={pocketHand.value}
-          suit={pocketHand.suit}
-          isActive="true"
-          handleOnClick={handleOnClick}
-        />
-        <Card
-          value={pocketHand.value}
-          suit={pocketHand.suit}
-          isActive="true"
-          handleOnClick={handleOnClick}
-        />
-        <Card
-          value={pocketHand.value}
-          suit={pocketHand.suit}
-          isActive="true"
-          handleOnClick={handleOnClick}
-        />
-        <Card
-          value={pocketHand.value}
-          suit={pocketHand.suit}
-          isActive="true"
-          handleOnClick={handleOnClick}
-        />
-      </aside>
+        {[...boardHand, {}, {}, {}, {}, {}].slice(0, 5).map ((card, index) => (
+          <Card
+          key={`empty_${index}`}
+          value={card.value}
+          suit={card.suit}
+          isActive="true" />
+        ))}
+        </ aside>
     </>
   );
 };

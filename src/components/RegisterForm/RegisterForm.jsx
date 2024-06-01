@@ -1,11 +1,10 @@
 import { useState } from "react";
-import axios from "axios";
 import "./RegisterForm.scss";
 import { Link } from "react-router-dom";
 
 const API_URL = import.meta.env.VITE_LOCALHOST;
 
-const RegisterForm = () => {
+const RegisterForm = ({ onSubmit, buttonText, successMessage, errorMessage }) => {
   const [signedUp, setSignedUp] = useState(false);
   const [error, setError] = useState(null);
   const [username, setUsername] = useState("");
@@ -20,29 +19,25 @@ const RegisterForm = () => {
     const newPassword = event.target.value;
     setPassword(newPassword);
   };
-  //TODO: Set up conditions for empty fields.
-  // if (!username || !password) {
-  //   alert("Missing information. Try again.");
-  // }
 
-  async function postUser() {
-    try {
-      const user = {
-        username,
-        password,
-      };
-      const postUserRequest = await axios.post(`${API_URL}/users/signup`, user);
-      setError("");
-      setSignedUp(true);
-    } catch (error) {
-      console.error("Error while creating a user", error);
-      setError("Error in signing up");
-    }
-  }
+  const isFormValid = () => {
+    return !!username && !!password;
+  };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
-    postUser();
+    if (isFormValid()) {
+      try {
+        await onSubmit({ username, password });
+        setSignedUp(true);
+        setError(null);
+      } catch (error) {
+        console.error("Error while processing the form", error);
+        setError(errorMessage);
+      }
+    } else {
+      setError("Error: username or password is missing");
+    }
   };
 
   return (
@@ -72,8 +67,13 @@ const RegisterForm = () => {
           />
         </label>
 
-        <button className="form__button">Sign Up</button>
-        {signedUp && <div>Sign up successful, please <Link to="/login">log in</Link></div>}
+        <button className="form__button">{buttonText}</button>
+        {signedUp && (
+          <div>
+            {successMessage}
+            <Link to="/login">log in</Link>
+          </div>
+        )}
         {error && <div>{error}</div>}
       </form>
     </>
@@ -81,4 +81,3 @@ const RegisterForm = () => {
 };
 
 export default RegisterForm;
-//TODO  add the login conditions

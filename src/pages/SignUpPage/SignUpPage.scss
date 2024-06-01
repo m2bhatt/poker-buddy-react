@@ -1,18 +1,12 @@
 .signup {
-  // height: 100%;
-  // background-color: pink;
-  &__page {
-    display: flex;
-    padding-top: 4rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    height: 100%;
-  }
-  
+  display: flex;
+  padding-top: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
   &__image {
-      width: 50%;
-      border-radius: 8px;
-      margin-right: 2rem;
-    }
-  
+    width: 50%;
+    border-radius: 8px;
+    margin-right: 2rem;
+  }
 }
