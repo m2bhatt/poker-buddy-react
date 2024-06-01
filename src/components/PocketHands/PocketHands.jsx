@@ -2,7 +2,7 @@ import Card from "../Card/Card";
 import { useEffect } from "react";
 import "./PocketHands.scss";
 
-const PocketHands = ({ pocketHand, setPocketHand, className }) => {
+const PocketHands = ({ pocketHand, className }) => {
   // const handleOnClick = () => {
   //   setPocketHand(pocketHand);
   //   console.log(pocketHand);

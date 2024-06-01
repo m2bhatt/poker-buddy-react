@@ -26,6 +26,19 @@
     top: 27%;
     left: 55%;
     z-index: 1;
+  }
 
+  &__outcome {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__actions {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
   }
 }

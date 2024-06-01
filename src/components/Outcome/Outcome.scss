@@ -1,0 +1,16 @@
+.outcome {
+  &__title {
+    font-size: 12px;
+  }
+
+  &__list {
+    margin-left: 12px;
+  }
+
+  &__button {
+    padding: 6px 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-left: 6px;
+  }
+}
