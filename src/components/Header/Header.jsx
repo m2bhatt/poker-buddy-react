@@ -1,7 +1,12 @@
 import "./Header.scss";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ token, setToken }) => {
+  const handleClick =() => {
+    localStorage.removeItem("token");
+    setToken(null);
+  }
+
   return (
     <div className="header">
       <p>Poker Buddy</p>
@@ -10,7 +15,7 @@ const Header = () => {
       <Link to="/login"><li className="header__item">Login Page</li></Link>
         <Link to="/trainer"><li className="header__item">Trainer</li></Link>
         <Link to="/account"><li className="header__item">Account</li></Link>
-        <li className="header__item">Log out</li>
+        <button className="header__item" onClick={handleClick}>Log out</button>
       </ul>
     </div>
   );

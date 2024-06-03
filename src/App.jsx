@@ -13,7 +13,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header token={token} setToken={setToken} />
       <Routes>
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage setToken={setToken} />} />
