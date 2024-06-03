@@ -5,15 +5,15 @@ import diamondsIcon from "../../assets/icons/diamonds.png";
 import spadesIcon from "../../assets/icons/spades.png";
 
 const suitIcons = {
-  "Hearts": heartsIcon,
-  "Clubs": clubsIcon,
-  "Diamonds": diamondsIcon,
-  "Spades": spadesIcon
+  "hearts": heartsIcon,
+  "clubs": clubsIcon,
+  "diamonds": diamondsIcon,
+  "spades": spadesIcon
 }
 
 
 const Card = ({ value, suit, handleOnClick, isActive, className }) => {
-  const icon = suitIcons[suit];
+  const icon = suitIcons[suit?.toLowerCase()];
 
   return (
     <article className="card" >

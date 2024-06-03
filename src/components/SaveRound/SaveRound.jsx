@@ -3,7 +3,7 @@ import axios from "axios";
 
 const API_URL = import.meta.env.VITE_LOCALHOST;
 
-const SaveRound = ({ className, pocketHand, boardHand }) => {
+const SaveRound = ({ className, pocketHand, boardHand, token }) => {
 
   //TODO- remove hardcoding of the outcome and hand_name 
   //TODO - remove hardcoding of the user id 
@@ -19,7 +19,11 @@ const SaveRound = ({ className, pocketHand, boardHand }) => {
         hand_name: 1
       };
       console.log(handData);
-      const postHandRequest = await axios.post(`${API_URL}/hands/1`, handData);
+      const postHandRequest = await axios.post(`${API_URL}/hands/1`, handData, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
     } catch (error) {
       console.error("Error while posting hand", error);
     }

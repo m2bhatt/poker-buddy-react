@@ -11,6 +11,7 @@ const Board = ({
   boardHand,
   setBoardHand,
   setActiveCardContainer,
+  token
 }) => {
   return (
     <main className="board">
@@ -23,7 +24,7 @@ const Board = ({
         />
       </div>
       <Outcome className={`board__outcome`} />
-      <SaveRound className={`board__saveround`} pocketHand={pocketHand} boardHand={boardHand}/>
+      <SaveRound className={`board__saveround`} pocketHand={pocketHand} boardHand={boardHand} token={token} />
       <Reset
         className={`board__reset`}
         setPocketHand={setPocketHand}

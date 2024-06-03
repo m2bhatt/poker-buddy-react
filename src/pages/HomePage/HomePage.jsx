@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import PokerHandList from "../../components/PokerHandsList/PokerHandsList";
 import "./HomePage.scss";
 
-const HomePage = () => {
+const HomePage = ({ token }) => {
   const [deck, setDeck] = useState();
   const [pocketHand, setPocketHand] = useState([]);
   const [boardHand, setBoardHand] = useState([]);
@@ -31,6 +31,7 @@ const HomePage = () => {
           boardHand={boardHand}
           setBoardHand={setBoardHand}
           setActiveCardContainer={setActiveCardContainer}
+          token={token}
         />
         <Deck
           deck={deck}

@@ -14,12 +14,12 @@ const LoginPage = ({ setToken }) => {
   const getUser = async ({ username, password }) => {
     const user = { username, password };
     const getUserRequest = await axios.post(`${API_URL}/users/login`, user);
-    const { token } = getUserRequest;
+    const { token } = getUserRequest.data;
     localStorage.setItem("token", token);
     setToken(token);
     setSignedIn(true);
     setError("");
-    navigate("/trainer");
+    navigate("/account");
   };
 
   return (

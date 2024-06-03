@@ -6,21 +6,25 @@ import HandsItem from "../HandsItem/HandsItem";
 
 const API_URL = import.meta.env.VITE_LOCALHOST;
 
-const HandsList = () => {
+const HandsList = ({ user_id, token }) => {
   const [handsData, setHandsData] = useState([]);
 
   async function getHands() {
     try {
-      const response = await axios.get(`${API_URL}/hands/1`);
+      const response = await axios.get(`${API_URL}/hands/${user_id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       const handsData = response.data.map((hand) => ({
-        date: new Date(hand.created_at).toISOString().split('T')[0],
+        date: new Date(hand.created_at).toISOString().split("T")[0],
         playerCards: hand.player_cards.cards,
         boardCards: hand.table_cards.cards,
-        outcome: hand.outcome
+        outcome: hand.outcome,
       }));
       setHandsData(handsData);
     } catch (error) {
-      console.error("Error while posting hand", error);
+      console.error("Error while getting hand", error);
     }
   }
 
@@ -43,14 +47,14 @@ const HandsList = () => {
         </tr>
       </thead>
       <tbody>
-        
         {handsData.map((hand, index) => (
-          <HandsItem 
-          key={index}
-          date={hand.date}
-          playerCards={hand.playerCards}
-          boardCards={hand.boardCards}
-          outcome={hand.outcome} />
+          <HandsItem
+            key={index}
+            date={hand.date}
+            playerCards={hand.playerCards}
+            boardCards={hand.boardCards}
+            outcome={hand.outcome}
+          />
         ))}
       </tbody>
     </table>
