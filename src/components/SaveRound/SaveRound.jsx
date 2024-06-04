@@ -19,7 +19,7 @@ const SaveRound = ({ className, pocketHand, boardHand, token }) => {
         hand_name: 1
       };
       console.log(handData);
-      const postHandRequest = await axios.post(`${API_URL}/hands/1`, handData, {
+      const postHandRequest = await axios.post(`${API_URL}/hands`, handData, {
         headers: {
           Authorization: `Bearer ${token}`
         }

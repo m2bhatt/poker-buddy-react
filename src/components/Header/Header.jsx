@@ -2,7 +2,7 @@ import "./Header.scss";
 import { Link } from "react-router-dom";
 
 const Header = ({ token, setToken }) => {
-  const handleClick =() => {
+  const handleOnClick =() => {
     localStorage.removeItem("token");
     setToken(null);
   }
@@ -15,7 +15,7 @@ const Header = ({ token, setToken }) => {
       <Link to="/login"><li className="header__item">Login Page</li></Link>
         <Link to="/trainer"><li className="header__item">Trainer</li></Link>
         <Link to="/account"><li className="header__item">Account</li></Link>
-        <button className="header__item" onClick={handleClick}>Log out</button>
+        <button className="header__item" onClick={handleOnClick}>Log out</button>
       </ul>
     </div>
   );

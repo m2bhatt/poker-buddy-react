@@ -1,4 +1,3 @@
-import Card from "../Card/Card";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./HandsList.scss";
@@ -6,12 +5,18 @@ import HandsItem from "../HandsItem/HandsItem";
 
 const API_URL = import.meta.env.VITE_LOCALHOST;
 
-const HandsList = ({ user_id, token }) => {
+const handOutcome = {
+  0: 'Lose',
+  1: 'Win',
+  2: 'Split'
+}
+
+const HandsList = ({ token }) => {
   const [handsData, setHandsData] = useState([]);
 
   async function getHands() {
     try {
-      const response = await axios.get(`${API_URL}/hands/${user_id}`, {
+      const response = await axios.get(`${API_URL}/hands`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -20,7 +25,7 @@ const HandsList = ({ user_id, token }) => {
         date: new Date(hand.created_at).toISOString().split("T")[0],
         playerCards: hand.player_cards.cards,
         boardCards: hand.table_cards.cards,
-        outcome: hand.outcome,
+        outcome: handOutcome[hand.outcome]
       }));
       setHandsData(handsData);
     } catch (error) {

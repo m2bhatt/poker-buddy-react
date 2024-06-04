@@ -39,7 +39,7 @@ const AccountPage = ({ token }) => {
       {user ? (
         <div>
           <h1>Welcome, {user.user_name}</h1>
-          <HandsList user_id={user.id} token={token}/>
+          <HandsList token={token}/>
         </div>
       ) : (
         <div>Please log in to see your account details.</div>
