@@ -1,8 +1,6 @@
-import { useEffect } from "react";
 import Card from "../Card/Card";
 import "./DeckColumn.scss";
 
-// new params: targetCardSet, maxLength, onClickHandler ...?
 const DeckColumn = ({ deck, suit, pocketHand, setPocketHand,  boardHand, setBoardHand, activeCardContainer, setActiveCardContainer }) => {
   const handleOnClick = (card) => {
     const cardData = { value: card.value, suit: card.suit };

@@ -4,6 +4,7 @@ import BoardHands from "../BoardHands/BoardHands";
 import Outcome from "../Outcome/Outcome";
 import Reset from "../Reset/Reset";
 import SaveRound from "../SaveRound/SaveRound";
+import { useState } from "react";
 
 const Board = ({
   pocketHand,
@@ -13,6 +14,8 @@ const Board = ({
   setActiveCardContainer,
   token
 }) => {
+  const [outcome, setOutcome] = useState("");
+
   return (
     <main className="board">
       <div className="board__image">
@@ -23,8 +26,8 @@ const Board = ({
           className={`board__pocket-hands`}
         />
       </div>
-      <Outcome className={`board__outcome`} />
-      <SaveRound className={`board__saveround`} pocketHand={pocketHand} boardHand={boardHand} token={token} />
+      <Outcome className={`board__outcome`} outcome={outcome} setOutcome={setOutcome}/>
+      <SaveRound className={`board__saveround`} pocketHand={pocketHand} boardHand={boardHand} token={token} outcome={outcome} />
       <Reset
         className={`board__reset`}
         setPocketHand={setPocketHand}

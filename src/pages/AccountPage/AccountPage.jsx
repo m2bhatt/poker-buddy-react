@@ -32,8 +32,6 @@ const AccountPage = ({ token }) => {
     return <div>Loading....in home page</div>;
   }
 
-  console.log('user:', user.id);
-
   return (
     <div>
       {user ? (

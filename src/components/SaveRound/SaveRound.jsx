@@ -3,10 +3,15 @@ import axios from "axios";
 
 const API_URL = import.meta.env.VITE_LOCALHOST;
 
-const SaveRound = ({ className, pocketHand, boardHand, token }) => {
+const handOutcome = {
+  'Lose': 0,
+  'Win': 1,
+  'Split': 2
+}
 
-  //TODO- remove hardcoding of the outcome and hand_name 
-  //TODO - remove hardcoding of the user id 
+const SaveRound = ({ className, pocketHand, boardHand, token, outcome }) => {
+
+  //TODO- remove hardcoding of hand_name 
 
   async function postHand() {
     const boardHandToPost = boardHand.slice(0, 5);
@@ -15,10 +20,9 @@ const SaveRound = ({ className, pocketHand, boardHand, token }) => {
       const handData = {
         player_cards: {"cards" : pocketHand},
         table_cards: {"cards" : boardHandToPost},
-        outcome: 1,
+        outcome: handOutcome[outcome],
         hand_name: 1
       };
-      console.log(handData);
       const postHandRequest = await axios.post(`${API_URL}/hands`, handData, {
         headers: {
           Authorization: `Bearer ${token}`

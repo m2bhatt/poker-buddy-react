@@ -10,9 +10,6 @@ const HomePage = ({ token }) => {
   const [boardHand, setBoardHand] = useState([]);
   const [activeCardContainer, setActiveCardContainer] = useState("pocketHand");
 
-  console.log("pockethand", pocketHand);
-  console.log("boardHand", boardHand);
-
   useEffect(() => {
     setDeck(createDeck());
   }, []);

@@ -1,10 +1,17 @@
+import { useState } from "react";
 import "./Outcome.scss";
 
-const Outcome = ({ className }) => {
+const Outcome = ({ className, outcome, setOutcome }) => {
+
+  const handleOnClick = (event) => {
+    setOutcome(event.target.textContent);
+  }
+
   return (
     <div className={`outcome ${className}`}>
-        <button className="outcome__button">Win</button>
-        <button className="outcome__button">Fold</button>
+        <button className="outcome__button" onClick={handleOnClick}>Win</button>
+        <button className="outcome__button" onClick={handleOnClick}>Fold</button>
+        <button className="outcome__button" onClick={handleOnClick}>Split</button>
     </div>
   );
 };
