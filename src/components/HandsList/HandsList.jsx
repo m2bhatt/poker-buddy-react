@@ -22,7 +22,7 @@ const HandsList = ({ token }) => {
         },
       });
       const handsData = response.data.map((hand) => ({
-        date: new Date(hand.created_at).toISOString().split("T")[0],
+        date: new Date(hand.created_at).toLocaleDateString('en-US'),
         playerCards: hand.player_cards.cards,
         boardCards: hand.table_cards.cards,
         outcome: handOutcome[hand.outcome]

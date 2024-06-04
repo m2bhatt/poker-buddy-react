@@ -1,0 +1,17 @@
+$font-local: "Epilogue";
+$font-normal: 400;
+$font-semi-bold: 600;
+
+/* Epilogue - Regular */
+@font-face {
+    font-family: $font-local;
+    src: url(../../assets/fonts/Epilogue-Regular.ttf) format("ttf");
+    font-weight: $font-normal;
+}
+
+/* Epilogue - Demi */
+@font-face {
+    font-family: $font-local;
+    src: url(../../assets/fonts/Epilogue-SemiBold.ttf) format("ttf");
+    font-weight: $font-demi;
+}

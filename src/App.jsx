@@ -10,10 +10,11 @@ import Header from "./components/Header/Header";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
+  console.log(token);
 
   return (
     <BrowserRouter>
-      <Header token={token} setToken={setToken} />
+      <Header isLoggedIn={!!token} setToken={setToken} />
       <Routes>
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage setToken={setToken} />} />
