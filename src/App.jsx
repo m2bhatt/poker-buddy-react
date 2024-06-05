@@ -10,7 +10,6 @@ import Header from "./components/Header/Header";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
-  console.log(token);
 
   return (
     <BrowserRouter>

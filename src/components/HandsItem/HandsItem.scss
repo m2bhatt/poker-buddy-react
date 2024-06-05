@@ -1,10 +1,21 @@
 .handsitem {
+  background-color: #F5F5F5;
+  border-bottom: 2px solid black;
+
+  &:hover {
+    background-color: lightblue;
+  }
+
   &__cards-container {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     display: flex;
     justify-content: center;
   }
 
-  &__outcome {
+  &__outcome, &__date {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     display: flex;
     justify-content: center;
   }

@@ -1,6 +1,19 @@
+@use "../../styles/partials/breakpoints";
+
 .handslist {
-  width: 80%;
-  margin-left: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  width: 100%;
+  border-collapse: collapse;
+
+  @include breakpoints.tablet {
+    width: 80%;
+  }
+
+  &__header {
+    background-color: black;
+    color: white;
+  }
+
+  &__header-item {
+    padding: 1rem;
+  }
 }

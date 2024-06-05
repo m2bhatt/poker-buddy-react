@@ -1,7 +1,8 @@
 import Card from "../Card/Card";
+import Probability from "../Probability/Probability";
 import "./PokerHand.scss";
 
-const PokerHand = ({ name, cards }) => {
+const PokerHand = ({ name, cards, pocketHand, boardHand }) => {
 
   if (!cards){
     return <div>Loading..</div>
@@ -16,7 +17,7 @@ const PokerHand = ({ name, cards }) => {
         ))}
       </div>
       <ul className="pokerhand__probability-list">
-        <li className="pokerhand__probability-item">44%</li>
+        <Probability pocketHand={pocketHand} boardHand={boardHand} /> 
       </ul>
     </div>
   )

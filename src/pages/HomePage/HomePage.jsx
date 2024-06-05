@@ -21,7 +21,7 @@ const HomePage = ({ token }) => {
   return (
     <>
       <div className="trainer-page">
-        <PokerHandList />
+        <PokerHandList pocketHand={pocketHand} boardHand={boardHand} />
         <Board
           pocketHand={pocketHand}
           setPocketHand={setPocketHand}

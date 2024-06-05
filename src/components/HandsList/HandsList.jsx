@@ -43,12 +43,12 @@ const HandsList = ({ token }) => {
 
   return (
     <table className="handslist">
-      <thead>
+      <thead className="handslist__header">
         <tr>
-          <th scope="col">Date</th>
-          <th scope="col">Pocket Cards</th>
-          <th scope="col">Board Cards</th>
-          <th scope="col">Outcome</th>
+          <th scope="col" className="handslist__header-item">Date</th>
+          <th scope="col" className="handslist__header-item">Pocket Cards</th>
+          <th scope="col" className="handslist__header-item">Board Cards</th>
+          <th scope="col" className="handslist__header-item">Outcome</th>
         </tr>
       </thead>
       <tbody>

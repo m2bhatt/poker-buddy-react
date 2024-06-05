@@ -1,7 +1,7 @@
 .card {
   &__container {
     background-color: white;
-    // filter: drop-shadow(1px 1px);
+    filter: drop-shadow(1px 1px);
     border-radius: 4px;
     height: 45px;
     width: 25px;
@@ -12,10 +12,6 @@
     &--inactive {
       background-color: #c2bdba;
       opacity: 50%;
-    }
-
-    &:hover {
-      cursor: pointer;
     }
   }
 

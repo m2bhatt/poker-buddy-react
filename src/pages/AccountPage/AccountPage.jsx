@@ -1,6 +1,7 @@
 import HandsList from "../../components/HandsList/HandsList";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./AccountPage.scss";
 
 const API_URL = import.meta.env.VITE_LOCALHOST;
 
@@ -33,9 +34,9 @@ const AccountPage = ({ token }) => {
   }
 
   return (
-    <div>
+    <div className="account">
       {user ? (
-        <div>
+        <div className="account__title">
           <h1>Welcome, {user.user_name}</h1>
           <HandsList token={token}/>
         </div>
