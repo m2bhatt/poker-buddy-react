@@ -6,13 +6,13 @@ import { useState, useEffect } from "react";
 
 const images = [dogImage1, dogImage2, dogImage3];
 
-const Images = () => {
+const Images = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000)
+    }, 10000)
 
     return () => clearInterval(intervalId);
   }, [])

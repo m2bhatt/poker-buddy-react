@@ -1,44 +1,109 @@
+@use "../../styles/partials/breakpoints";
+
 .images {
-  height: 100vh;
-  overflow: hidden;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  display: none;
 
+  @include breakpoints.tablet {
+    height: 100vh;
+    overflow: hidden;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 20px;
+    background-color: #dce1de;
+  }
 
-&__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+  &__container {
+    @include breakpoints.tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+  }
+
+  &__image {
+    @include breakpoints.tablet {
+      width: 100%;
+    }
+
+    &--half-bottom {
+      @include breakpoints.tablet {
+        height: 40vh;
+        position: absolute;
+        margin-bottom: 30px;
+        top: 0;
+        transform: translateY(50%);
+        opacity: 50%;
+        border-radius: 10px;
+      }
+    }
+
+    &--full {
+      @include breakpoints.tablet {
+        z-index: 1;
+      }
+    }
+
+    &--half-top {
+      @include breakpoints.tablet {
+        height: 40vh;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(-50%);
+        opacity: 50%;
+        border-radius: 10px;
+      }
+    }
+  }
 }
 
-&__image {
-  width: 100%;
-  border-radius: 4px;
+// .images {
+//   height: 100vh;
+//   overflow: hidden;
+//   width: 50%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   position: relative;
+//   padding-top: 20px;
+//   background-color: #DCE1DE;
 
-&--half-bottom {
-  height: 50vh;
-  position: absolute;
-  margin-bottom: 30px; 
-  top: 0;
-  transform: translateY(50%);
-  opacity: 50%;
-}
+//   &__container {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     position: relative;
+//   }
 
-&--full {
-  z-index: 1;
-}
+//   &__image {
+//     width: 100%;
 
-&--half-top {
-  height: 50vh; 
-  position: absolute;
-  bottom: 0;
-  transform: translateY(-50%);
-  opacity: 50%;
-}
-}
-}
+//     &--half-bottom {
+//       height: 40vh;
+//       position: absolute;
+//       margin-bottom: 30px;
+//       top: 0;
+//       transform: translateY(50%);
+//       opacity: 50%;
+//       border-radius: 10px;
+//     }
+
+//     &--full {
+//       z-index: 1;
+//     }
+
+//     &--half-top {
+//       height: 40vh;
+//       position: absolute;
+//       bottom: 0;
+//       transform: translateY(-50%);
+//       opacity: 50%;
+//       border-radius: 10px;
+//     }
+//   }
+// }
