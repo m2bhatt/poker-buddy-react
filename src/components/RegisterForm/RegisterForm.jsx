@@ -33,10 +33,11 @@ const RegisterForm = ({ onSubmit, buttonText, successMessage, errorMessage }) =>
         setError(null);
       } catch (error) {
         console.error("Error while processing the form", error);
+        setSignedUp("");
         setError(errorMessage);
       }
     } else {
-      setError("Error: username or password is missing");
+      setError("Username or password is missing.");
     }
   };
 
@@ -69,12 +70,12 @@ const RegisterForm = ({ onSubmit, buttonText, successMessage, errorMessage }) =>
 
         <button className="form__button">{buttonText}</button>
         {signedUp && (
-          <div>
+          <div className="form__copy">
             {successMessage}
             <Link to="/login">log in</Link>
           </div>
         )}
-        {error && <div>{error}</div>}
+        {error && <div className="form__copy">{error}</div>}
       </form>
     </>
   );

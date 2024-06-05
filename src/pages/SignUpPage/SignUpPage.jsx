@@ -21,8 +21,8 @@ const SignUpPage = () => {
         <RegisterForm
           onSubmit={postUser}
           buttonText="Sign Up"
-          successMessage="Sign up successful"
-          errorMessage="Error is signing in"
+          successMessage="Sign up successful."
+          errorMessage="Error in signing in. Try again."
         />
       </main>
   );

@@ -19,7 +19,7 @@ const LoginPage = ({ setToken }) => {
     setToken(token);
     setSignedIn(true);
     setError("");
-    navigate("/account");
+    navigate("/trainer");
   };
 
   return (
@@ -31,8 +31,8 @@ const LoginPage = ({ setToken }) => {
       <RegisterForm
         onSubmit={getUser}
         buttonText="Log in"
-        successMessage="Login successful"
-        errorMessage="Error in signing in"
+        successMessage="Login successful."
+        errorMessage="Error in signing in."
       />
     </>
   );

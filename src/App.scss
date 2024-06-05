@@ -1,6 +1,10 @@
+@use "./styles/partials/typography" as *;
+@use "./styles/partials/colors" as *;
+
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #DDD7D5;
+  background-color: $bg-color;
+  font-family: $font-local, 'Courier New', Courier, monospace;
 }

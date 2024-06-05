@@ -9,7 +9,7 @@ const Header = ({ isLoggedIn, setToken }) => {
 
   return (
     <div className="header">
-      <p>Poker Buddy</p>
+      <p className="header__logo">Poker Buddy</p>
       <ul className="header__list">
         {isLoggedIn ? (
           <>
@@ -28,10 +28,10 @@ const Header = ({ isLoggedIn, setToken }) => {
         ) : (
           <>
             <Link to="/signup">
-              <li className="header__item">Signup Page</li>
+              <li className="header__item">Register</li>
             </Link>
             <Link to="/login">
-              <li className="header__item">Login Page</li>
+              <li className="header__item">Login</li>
             </Link>
           </>
         )}

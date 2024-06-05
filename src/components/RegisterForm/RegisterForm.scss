@@ -1,3 +1,5 @@
+@use "../../styles/partials/colors" as *; 
+
 .form {
   background-color: white;
   border-radius: 12px;
@@ -27,5 +29,10 @@
     color: white;
     height: 40px;
     border-radius: 4px;
+  }
+
+  &__copy {
+    margin-top: 0.5rem;
+    color: $error-color;
   }
 }

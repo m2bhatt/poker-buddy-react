@@ -5,13 +5,13 @@ $font-semi-bold: 600;
 /* Epilogue - Regular */
 @font-face {
     font-family: $font-local;
-    src: url(../../assets/fonts/Epilogue-Regular.ttf) format("ttf");
+    src: url(../../assets/fonts/Epilogue-Regular.ttf) format("truetype");
     font-weight: $font-normal;
 }
 
 /* Epilogue - Demi */
 @font-face {
     font-family: $font-local;
-    src: url(../../assets/fonts/Epilogue-SemiBold.ttf) format("ttf");
-    font-weight: $font-demi;
+    src: url(../../assets/fonts/Epilogue-SemiBold.ttf) format("truetype");
+    font-weight: $font-semi-bold;
 }

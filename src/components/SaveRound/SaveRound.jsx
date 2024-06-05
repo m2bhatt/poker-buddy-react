@@ -11,6 +11,7 @@ const handOutcome = {
 
 const SaveRound = ({ className, pocketHand, boardHand, token, outcome }) => {
 
+  console.log('outcome' + outcome);
   //TODO- remove hardcoding of hand_name 
 
   async function postHand() {
@@ -23,6 +24,7 @@ const SaveRound = ({ className, pocketHand, boardHand, token, outcome }) => {
         outcome: handOutcome[outcome],
         hand_name: 1
       };
+      console.log(handData);
       const postHandRequest = await axios.post(`${API_URL}/hands`, handData, {
         headers: {
           Authorization: `Bearer ${token}`
