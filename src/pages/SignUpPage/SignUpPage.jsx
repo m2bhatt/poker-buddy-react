@@ -1,5 +1,5 @@
+import Images from "../../components/ImagesList/Images";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
-import dogImage from "../../assets/images/poker_sympathy.jpg";
 import "./SignUpPage.scss";
 import axios from "axios";
 
@@ -13,11 +13,7 @@ const SignUpPage = () => {
 
   return (
       <main className="signup">
-        <img
-          src={dogImage}
-          alt="dogs playing poker"
-          className="signup__image"
-        />
+        <Images />
         <RegisterForm
           onSubmit={postUser}
           buttonText="Sign Up"

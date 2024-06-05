@@ -1,0 +1,44 @@
+.images {
+  height: 100vh;
+  overflow: hidden;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+
+&__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+&__image {
+  width: 100%;
+  border-radius: 4px;
+
+&--half-bottom {
+  height: 50vh;
+  position: absolute;
+  margin-bottom: 30px; 
+  top: 0;
+  transform: translateY(50%);
+  opacity: 50%;
+}
+
+&--full {
+  z-index: 1;
+}
+
+&--half-top {
+  height: 50vh; 
+  position: absolute;
+  bottom: 0;
+  transform: translateY(-50%);
+  opacity: 50%;
+}
+}
+}

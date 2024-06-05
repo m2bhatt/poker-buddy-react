@@ -42,8 +42,8 @@ const RegisterForm = ({ onSubmit, buttonText, successMessage, errorMessage }) =>
   };
 
   return (
-    <>
-      <form onSubmit={handleFormSubmit} className="form">
+    <div className="form">
+      <form onSubmit={handleFormSubmit} className="form__form">
         <label htmlFor="username" className="form__label">
           Username
           <input
@@ -77,7 +77,7 @@ const RegisterForm = ({ onSubmit, buttonText, successMessage, errorMessage }) =>
         )}
         {error && <div className="form__copy">{error}</div>}
       </form>
-    </>
+    </div>
   );
 };
 

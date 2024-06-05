@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
+import Images from "../../components/ImagesList/Images";
+import "./LoginPage.scss";
 
 const API_URL = import.meta.env.VITE_LOCALHOST;
 
@@ -23,18 +25,15 @@ const LoginPage = ({ setToken }) => {
   };
 
   return (
-    <>
-      <div>
-        <h1>Login Page</h1>
-      </div>
-
+    <main className="login">
+      <Images />
       <RegisterForm
         onSubmit={getUser}
         buttonText="Log in"
         successMessage="Login successful."
         errorMessage="Error in signing in."
       />
-    </>
+    </main>
   );
 };
 
