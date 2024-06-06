@@ -12,10 +12,13 @@ const DeckColumn = ({ deck, suit, pocketHand, setPocketHand,  boardHand, setBoar
       if (newHand.length >= 2) {
         setActiveCardContainer('boardHand')
       }
+      
       setPocketHand(newHand)
-    } else {
-      newHand = [...boardHand, cardData];
-      setBoardHand(newHand)
+    } else { // active container is boardHand
+      if (boardHand.length < 5) {
+        newHand = [...boardHand, cardData];
+        setBoardHand(newHand);
+      }
     }
   };
 

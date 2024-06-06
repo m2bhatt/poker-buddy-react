@@ -1,5 +1,6 @@
 import pokerHandList from "../../data/pokerHands.json";
 import PokerHand from "../PokerHand/PokerHand";
+// import ProbabilityList from "../ProbabilityList/ProbabilityList";
 import "./PokerHandsList.scss";
 
 const PokerHandList = ({ pocketHand, boardHand }) => {
