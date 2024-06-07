@@ -1,15 +1,5 @@
 [
   {
-    "name": "Royal Flush",
-    "cards": [
-      { "suit": "Hearts", "value": "A", "isActive": true },
-      { "suit": "Hearts", "value": "K", "isActive": true },
-      { "suit": "Hearts", "value": "Q", "isActive": true },
-      { "suit": "Hearts", "value": "J", "isActive": true },
-      { "suit": "Hearts", "value": "10", "isActive": true }
-    ]
-  },
-  {
     "name": "Straight Flush",
     "cards": [
       { "suit": "Clubs", "value": "J", "isActive": true },

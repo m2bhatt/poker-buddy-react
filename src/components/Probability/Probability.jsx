@@ -1,7 +1,8 @@
 import { TexasHoldem } from "unknown-poker";
 import formatCardList from "../../utils/FormatCardList";
 import { useEffect, useState } from "react";
-import PokerHand from "../PokerHand/PokerHand";
+import PokerHandsList from "../PokerHandsList/PokerHandsList";
+import "./Probability.scss";
 
 const Probability = ({ pocketHand, boardHand }) => {
   const [probabilityData, setProbabilityData] = useState();
@@ -19,8 +20,6 @@ const Probability = ({ pocketHand, boardHand }) => {
         resolve(table.calculate());
       }, 2000);
     });
-
-    // return table.calculate();
   }
 
   useEffect(() => {
@@ -33,29 +32,17 @@ const Probability = ({ pocketHand, boardHand }) => {
 
     getData();
   }, [pocketHand,boardHand]) 
-
-  if(!probabilityData) {
-    return <div>loading..</div>
-  }
-
-  const { yourHandChances } = probabilityData;
+ 
+  const initialPokerChances = { "Straight Flush": 0, "Four of a Kind" :0, "Full House": 0, 'Flush': 0, 'Straight': 0, "Three of a Kind": 0, "Two Pair": 0,  "Pair": 0, "High Card": 0 }
+  const newPokerChances = Object.assign(initialPokerChances, probabilityData?.yourHandChances);
 
   return (
     <>
-      <div>
-      {Object.entries(yourHandChances).map(([key, value]) => (
-        <div key={key}>
-          {key}: {value}
-        </div>
-      ))}
-    </div>
-    <div>
-      < PokerHand />
+    <div className="probability">
+      <PokerHandsList newPokerChances={newPokerChances}/>
     </div>
     </>
-  
   )
-
 };
 
 export default Probability;

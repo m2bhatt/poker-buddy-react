@@ -2,20 +2,14 @@
   display: flex;
 
   &__title {
-    width: 45%;
+    width: 30%;
     margin: 0;
   }
   &__cards {
     display: flex;
   }
 
-  &__probability-list {
-    list-style-type: none;
-    display: flex;
+  &__number {
     padding-left: 1rem;
-  }
-
-  &__probability-item {
-    padding-right: 1rem;
   }
 }

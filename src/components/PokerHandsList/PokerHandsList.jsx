@@ -1,14 +1,13 @@
 import pokerHandList from "../../data/pokerHands.json";
 import PokerHand from "../PokerHand/PokerHand";
-// import ProbabilityList from "../ProbabilityList/ProbabilityList";
 import "./PokerHandsList.scss";
 
-const PokerHandList = ({ pocketHand, boardHand }) => {
+const PokerHandList = ({ newPokerChances }) => {
   return (
     <div className="pokerhandslist">
       <div>
         {pokerHandList.map((pokerHand) => (
-          <PokerHand key={pokerHand.name} name={pokerHand.name} cards={pokerHand.cards} pocketHand={pocketHand} boardHand={boardHand} />
+          <PokerHand key={pokerHand.name} name={pokerHand.name} cards={pokerHand.cards} chance={newPokerChances[pokerHand.name]}/>
         ))}
       </div>
     </div>

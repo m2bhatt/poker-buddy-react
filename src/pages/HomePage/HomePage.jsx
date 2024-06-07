@@ -1,7 +1,7 @@
+import Probability from "../../components/Probability/Probability";
 import Board from "../../components/Board/Board";
 import Deck from "../../components/Deck/Deck";
 import { useEffect, useState } from "react";
-import PokerHandList from "../../components/PokerHandsList/PokerHandsList";
 import "./HomePage.scss";
 
 const HomePage = ({ token }) => {
@@ -21,7 +21,7 @@ const HomePage = ({ token }) => {
   return (
     <>
       <div className="trainer-page">
-        <PokerHandList pocketHand={pocketHand} boardHand={boardHand} />
+        <Probability pocketHand={pocketHand} boardHand={boardHand} />
         <Board
           pocketHand={pocketHand}
           setPocketHand={setPocketHand}

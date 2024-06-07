@@ -1,10 +1,7 @@
 import Card from "../Card/Card";
-import Probability from "../Probability/Probability";
 import "./PokerHand.scss";
-import pokerHandList from "../../data/pokerHands.json";
 
-const PokerHand = ({ name, cards, pocketHand, boardHand }) => {
-
+const PokerHand = ({ name, cards, chance }) => {
   if (!cards){
     return <div>Loading..</div>
   }
@@ -17,11 +14,13 @@ const PokerHand = ({ name, cards, pocketHand, boardHand }) => {
           <Card key={`${card.value}${card.suit}`} value={card.value} suit={card.suit} isActive={card.isActive}/>
         ))}
       </div>
-      <ul className="pokerhand__probability-list">
-        <Probability pocketHand={pocketHand} boardHand={boardHand} /> 
-      </ul>
+      <p className="pokerhand__number">{convertToPercentage(chance)}</p>
     </div>
   )
+
+  function convertToPercentage(num) {
+    return (num * 100).toFixed(2) + '%';
+  }
 }
 
 export default PokerHand;
