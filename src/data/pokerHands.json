@@ -72,8 +72,8 @@
   {
     "name": "Pair",
     "cards": [
-      { "suit": "Diamonds", "value": "J", "isActive": true },
-      { "suit": "Spades", "value": "J", "isActive": true },
+      { "suit": "Diamonds", "value": "Q", "isActive": true },
+      { "suit": "Spades", "value": "Q", "isActive": true },
       { "suit": "Hearts", "value": "4", "isActive": false },
       { "suit": "Clubs", "value": "3", "isActive": false },
       { "suit": "Diamonds", "value": "7", "isActive": false }
