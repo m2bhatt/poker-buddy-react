@@ -1,16 +1,17 @@
 @use "../../styles/partials/typography";
+@use "../../styles/partials/colors";
 
 .pokerhand {
   display: flex;
   justify-content: space-between;
-  background-color: white;
-  border-bottom: 1px solid black;
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
+  background-color: colors.$row-color;
+  border-bottom: 1px solid colors.$border-color;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
   padding-left: 0.5rem;
 
   &:hover {
-    background-color: lightblue;
+    background-color: colors.$row-hover-color;
   }
 
   &__title {

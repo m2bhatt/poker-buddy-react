@@ -1,4 +1,5 @@
 @use "../../styles/partials/typography";
+@use "../../styles/partials/colors";
 
 .outcome {
   &__title {
@@ -18,11 +19,12 @@
     font-size: 1rem;
 
     &--active {
-      background-color: pink;
+      color: white;
+      background-color: colors.$action-color;
     }
 
     &:hover {
-      cursor: URL("./hover.svg"), auto;
+      cursor: url("./hover.svg"), auto;
     }
   }
 }

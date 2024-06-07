@@ -1,8 +1,9 @@
 @use "../../styles/partials/mixins";
+@use "../../styles/partials/colors";
 
 .reset {
   &__button {
-    background-color: #0077B6;
+    background-color: colors.$action-color;
     @include mixins.button;
   }
 }

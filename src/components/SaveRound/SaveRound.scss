@@ -1,8 +1,9 @@
 @use "../../styles/partials/mixins";
+@use "../../styles/partials/colors";
 
 .saveround {
   &__button {
-    background-color: green;
+    background-color: colors.$action-color-primary;
     @include mixins.button;
   }
 }

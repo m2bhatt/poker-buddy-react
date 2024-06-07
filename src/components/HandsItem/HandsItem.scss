@@ -1,9 +1,10 @@
+@use "../../styles/partials/colors";
+
 .handsitem {
-  background-color: #F5F5F5;
-  border-bottom: 2px solid black;
+  background-color: colors.$row-color;
 
   &:hover {
-    background-color: lightblue;
+    background-color: colors.$row-hover-color;
   }
 
   &__cards-container {

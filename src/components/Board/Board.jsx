@@ -5,6 +5,7 @@ import Outcome from "../Outcome/Outcome";
 import Reset from "../Reset/Reset";
 import SaveRound from "../SaveRound/SaveRound";
 import { useState } from "react";
+// import { SnackbarProvider, enqueueSnackbar } from "notistack";
 
 const Board = ({
   pocketHand,
@@ -17,7 +18,12 @@ const Board = ({
   const [outcome, setOutcome] = useState("");
 
   return (
+    
     <main className="board">
+      {/* <div>
+        <SnackbarProvider /> 
+        <button onClick={() => enqueueSnackbar("That was easy!")}> Show snackbar </button>
+        </div> */}
       <div className="board__image">
         <BoardHands boardHand={boardHand} className={`board__board-hands`} />
         <PocketHands
@@ -46,6 +52,7 @@ const Board = ({
         setActiveCardContainer={setActiveCardContainer}
       />
       </div>
+    
     </main>
   );
 };

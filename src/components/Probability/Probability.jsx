@@ -6,7 +6,6 @@ import "./Probability.scss";
 
 const Probability = ({ pocketHand, boardHand }) => {
   const [probabilityData, setProbabilityData] = useState();
-  console.log(probabilityData);
 
   function calculateProbability() {
     setProbabilityData(null);
@@ -35,12 +34,13 @@ const Probability = ({ pocketHand, boardHand }) => {
   }, [pocketHand,boardHand]) 
  
   const initialPokerChances = { "Straight Flush": 0, "Four of a Kind" :0, "Full House": 0, 'Flush': 0, 'Straight': 0, "Three of a Kind": 0, "Two Pair": 0,  "Pair": 0, "High Card": 0 }
-  const newPokerChances = Object.assign(initialPokerChances, probabilityData?.yourHandChances);
+  const yourPokerChances = Object.assign(initialPokerChances, probabilityData?.yourHandChances);
+ // const opponentPokerChances = Object.assign(initialPokerChances, probabilityData?.yourHandChances);
 
   return (
     <>
     <div className="probability">
-      <PokerHandsList newPokerChances={newPokerChances}/>
+      <PokerHandsList yourPokerChances={yourPokerChances}/>
     </div>
     </>
   )
