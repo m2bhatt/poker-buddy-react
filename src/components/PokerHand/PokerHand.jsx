@@ -1,7 +1,7 @@
 import Card from "../Card/Card";
 import "./PokerHand.scss";
 
-const PokerHand = ({ name, cards, chance }) => {
+const PokerHand = ({ name, cards, yourHandChances, oppHandChances }) => {
   if (!cards){
     return <div>Loading..</div>
   }
@@ -14,7 +14,8 @@ const PokerHand = ({ name, cards, chance }) => {
           <Card key={`${card.value}${card.suit}`} value={card.value} suit={card.suit} isActive={card.isActive}/>
         ))}
       </div>
-      <p className="pokerhand__number">{convertToPercentage(chance)}</p>
+      <p className="pokerhand__number">{convertToPercentage(yourHandChances)}</p>
+      <p className="pokerhand__number">{convertToPercentage(oppHandChances)}</p>
     </div>
   )
 
