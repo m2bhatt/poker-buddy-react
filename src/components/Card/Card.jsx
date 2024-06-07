@@ -13,14 +13,15 @@ const suitIcons = {
 
 const Card = ({ value, suit, handleOnClick, isActive, className }) => {
   const icon = suitIcons[suit?.toLowerCase()];
+  const isEmpty = !value && !suit;
 
   return (
     <article className="card">
       <div
         className={
           isActive
-            ? `card__container ${className}`
-            : "card__container card__container--inactive"
+            ? `card__container ${className} ${isEmpty ? 'card__container--empty' : ''}`
+            : `card__container card__container--inactive ${isEmpty ? 'card__container--empty' : ''}`
         }
         onClick={() => handleOnClick({ value, suit })}
       >

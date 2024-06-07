@@ -5,6 +5,10 @@ import "./PokerHandsList.scss";
 const PokerHandList = ({ newPokerChances }) => {
   return (
     <div className="pokerhandslist">
+      <ul className="pokerhandslist__list">
+        <li className="pokerhandslist__item">Poker Hand</li>
+        <li className="pokerhandslist__item">You</li>
+      </ul>
       <div>
         {pokerHandList.map((pokerHand) => (
           <PokerHand key={pokerHand.name} name={pokerHand.name} cards={pokerHand.cards} chance={newPokerChances[pokerHand.name]}/>

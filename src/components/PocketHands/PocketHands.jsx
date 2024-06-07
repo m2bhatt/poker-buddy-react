@@ -10,7 +10,7 @@ const PocketHands = ({ pocketHand, className }) => {
   return (
     <aside className={`pockethands ${className}`}>
       {[...pocketHand, {}, {}].slice(0, 2).map((card, index) => (
-        <Card className={pocketHand.length === 0 ? "pockethands__card" : ""}
+        <Card
           key={`empty_${index}`}
           value={card.value}
           suit={card.suit}

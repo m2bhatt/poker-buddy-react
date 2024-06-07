@@ -6,6 +6,7 @@ import "./Probability.scss";
 
 const Probability = ({ pocketHand, boardHand }) => {
   const [probabilityData, setProbabilityData] = useState();
+  console.log(probabilityData);
 
   function calculateProbability() {
     setProbabilityData(null);

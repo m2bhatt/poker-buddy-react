@@ -1,8 +1,21 @@
+@use "../../styles/partials/typography";
+
 .pokerhand {
   display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+
+  &:hover {
+    background-color: lightblue;
+  }
 
   &__title {
     width: 30%;
+    font-weight: typography.$font-semi-bold;
     margin: 0;
   }
   &__cards {
@@ -10,6 +23,7 @@
   }
 
   &__number {
-    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 15%;
   }
 }

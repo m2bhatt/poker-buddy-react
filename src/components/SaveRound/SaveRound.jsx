@@ -10,8 +10,6 @@ const handOutcome = {
 }
 
 const SaveRound = ({ className, pocketHand, boardHand, token, outcome }) => {
-  //TODO- remove hardcoding of hand_name
-
   async function postHand() {
     const boardHandToPost = boardHand.slice(0, 5);
 

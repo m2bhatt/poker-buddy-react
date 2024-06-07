@@ -12,7 +12,7 @@ const Board = ({
   boardHand,
   setBoardHand,
   setActiveCardContainer,
-  token
+  token,
 }) => {
   const [outcome, setOutcome] = useState("");
 
@@ -26,15 +26,26 @@ const Board = ({
           className={`board__pocket-hands`}
         />
       </div>
-      <Outcome className={`board__outcome`} outcome={outcome} setOutcome={setOutcome}/>
-      <SaveRound className={`board__saveround`} pocketHand={pocketHand} boardHand={boardHand} token={token} outcome={outcome} />
+        <Outcome
+          className={`board__outcome`}
+          outcome={outcome}
+          setOutcome={setOutcome}
+        />
+        <div className="board__actions-container">
+        <SaveRound
+          className={`board__saveround`}
+          pocketHand={pocketHand}
+          boardHand={boardHand}
+          token={token}
+          outcome={outcome}
+        />
       <Reset
         className={`board__reset`}
         setPocketHand={setPocketHand}
         setBoardHand={setBoardHand}
         setActiveCardContainer={setActiveCardContainer}
       />
-
+      </div>
     </main>
   );
 };

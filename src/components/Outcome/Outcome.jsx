@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./Outcome.scss";
 
 const Outcome = ({ className, outcome, setOutcome }) => {
@@ -9,9 +8,9 @@ const Outcome = ({ className, outcome, setOutcome }) => {
 
   return (
     <div className={`outcome ${className}`}>
-        <button className="outcome__button" onClick={handleOnClick}>Win</button>
-        <button className="outcome__button" onClick={handleOnClick}>Fold</button>
-        <button className="outcome__button" onClick={handleOnClick}>Split</button>
+        <button className={`outcome__button ${outcome === 'Win' ? 'outcome__button--active' : ""}`} onClick={handleOnClick}>Win</button>
+        <button className={`outcome__button ${outcome === 'Fold' ? 'outcome__button--active' : ""}`} onClick={handleOnClick}>Fold</button>
+        <button className={`outcome__button ${outcome === 'Split' ? 'outcome__button--active' : ""}`} onClick={handleOnClick}>Split</button>
     </div>
   );
 };

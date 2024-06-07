@@ -13,6 +13,10 @@
       background-color: #c2bdba;
       opacity: 50%;
     }
+
+    &--empty {
+      background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    }
   }
 
   &__value {

@@ -1,8 +1,8 @@
 .board {
-  // border: 1px solid blue;
-  width: 35%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  // background-color: white;
+  width: 20%;
+  padding-left: 3rem;
+  padding-right: 3rem;
 
   &__image {
     background-color: #49AD49;
@@ -37,14 +37,11 @@
   &__outcome {
     margin-top: 4rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
   }
 
-  &__reset {
-    margin-top: 2rem;
+  &__actions-container {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
+    justify-content: space-between;
   }
 }

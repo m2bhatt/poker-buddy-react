@@ -1,3 +1,5 @@
+@use "../../styles/partials/typography";
+
 .outcome {
   &__title {
     font-size: 12px;
@@ -8,9 +10,19 @@
   }
 
   &__button {
-    padding: 6px 12px;
-    border: 1px solid black;
+    padding: 6px 18px;
+    border: none;
     border-radius: 4px;
     margin-left: 6px;
+    font-family: typography.$font-local;
+    font-size: 1rem;
+
+    &--active {
+      background-color: pink;
+    }
+
+    &:hover {
+      cursor: URL("../public/hover.svg"), auto;
+    }
   }
 }

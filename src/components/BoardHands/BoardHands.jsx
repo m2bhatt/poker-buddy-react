@@ -11,7 +11,7 @@ const BoardHands = ({ boardHand, className }) => {
     <>
       <aside className={`boardhands ${className}`}>
         {[...boardHand, {}, {}, {}, {}, {}].slice(0, 5).map ((card, index) => (
-          <Card className={boardHand.length === 0 ? "boardhands__card" : ""}
+          <Card
           key={`empty_${index}`}
           value={card.value}
           suit={card.suit}
