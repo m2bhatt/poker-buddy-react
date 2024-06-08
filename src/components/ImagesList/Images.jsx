@@ -12,7 +12,7 @@ const Images = ({ className }) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 10000)
+    }, 2000)
 
     return () => clearInterval(intervalId);
   }, [])

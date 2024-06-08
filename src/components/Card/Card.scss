@@ -12,6 +12,10 @@
     &--inactive {
       background-color: #c2bdba;
       opacity: 50%;
+
+      &:hover {
+        cursor: url("./pointer.svg"), auto;
+      }
     }
 
     &--empty {

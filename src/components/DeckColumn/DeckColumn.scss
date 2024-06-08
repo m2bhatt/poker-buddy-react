@@ -1,3 +1,5 @@
-.decklist {
-  margin-right: 0.50rem;
+.deckcolumn {
+  &:hover {
+    cursor: url("./hover.svg"), auto;
+  }
 }

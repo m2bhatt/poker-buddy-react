@@ -5,6 +5,7 @@ const suits = ["Hearts", "Diamonds", "Spades", "Clubs"];
 
 const Deck = ({
   deck,
+  setDeck,
   pocketHand,
   setPocketHand,
   boardHand,
@@ -18,6 +19,7 @@ const Deck = ({
         <DeckColumn
           key={suit}
           deck={deck}
+          setDeck={setDeck}
           suit={suit}
           pocketHand={pocketHand}
           setPocketHand={setPocketHand}

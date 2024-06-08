@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import PokerHandsList from "../PokerHandsList/PokerHandsList";
 import "./Probability.scss";
 
-const Probability = ({ pocketHand, boardHand }) => {
-  const [probabilityData, setProbabilityData] = useState();
+const Probability = ({ pocketHand, boardHand, probabilityData, setProbabilityData }) => {
+  // const [probabilityData, setProbabilityData] = useState();
   
 
   function calculateProbability() {

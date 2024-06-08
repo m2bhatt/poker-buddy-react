@@ -1,6 +1,6 @@
 import "./SaveRound.scss";
 import axios from "axios";
-import { SnackbarProvider, enqueueSnackbar } from "notistack";
+import { useSnackbar } from "notistack";
 
 const API_URL = import.meta.env.VITE_LOCALHOST;
 
@@ -10,14 +10,15 @@ const handOutcome = {
   Split: 2,
 };
 
-const SaveRound = ({ className, pocketHand, boardHand, token, outcome }) => {
-  async function postHand() {
-    const boardHandToPost = boardHand.slice(0, 5);
+const SaveRound = ({ className, pocketHand, setPocketHand, boardHand, setBoardHand, token, outcome, setOutcome, setActiveCardContainer }) => {
 
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+
+  async function postHand() {
     try {
       const handData = {
         player_cards: { cards: pocketHand },
-        table_cards: { cards: boardHandToPost },
+        table_cards: { cards: boardHand },
         outcome: handOutcome[outcome],
         hand_name: 1,
       };
@@ -31,18 +32,45 @@ const SaveRound = ({ className, pocketHand, boardHand, token, outcome }) => {
     }
   }
 
+  const resetHand = () => {
+    setPocketHand([]);
+    setBoardHand([]);
+    setOutcome("");
+    setActiveCardContainer('pocketHand');
+  };
+
   const handleOnClick = async (event) => {
     event.preventDefault();
-    postHand();
-    enqueueSnackbar("Hand saved successfully!");
-    //set board cards and pocket cards to initial state TODO
+    closeSnackbar();
+    if (pocketHand.length < 2) {
+      enqueueSnackbar("Add your pocket cards before saving hand.", {
+        autoHideDuration: 20000,
+        preventDuplicate: true,
+        warning: true,
+        variant: 'error'
+      })
+    }
+    else if (!outcome) {
+      enqueueSnackbar("Add outcome in order to save hand!", {
+        autoHideDuration: 20000,
+        preventDuplicate: true,
+        variant: 'error'
+      })
+    } else {
+      await postHand();
+      enqueueSnackbar("Hand saved successfully!", {
+        autoHideDuration: 20000,
+        preventDuplicate: true,
+        variant: 'success'
+    })
+    resetHand();
+    }
   };
 
   return (
     <div className={`saveround ${className}`}>
-      <SnackbarProvider className="saveround__snackbar"/>
       <button className="saveround__button" onClick={handleOnClick}>
-        Save
+        SAVE
       </button>
     </div>
   );

@@ -26,4 +26,3 @@ const SignUpPage = () => {
 
 export default SignUpPage;
 //TODO  add the login conditions
-//TODO check why signup is not 100% height

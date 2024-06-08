@@ -1,5 +1,4 @@
 import Card from "../Card/Card";
-import { useEffect } from "react";
 import "./PocketHands.scss";
 
 const PocketHands = ({ pocketHand, className }) => {

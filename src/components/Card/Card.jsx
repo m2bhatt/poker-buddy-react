@@ -20,10 +20,14 @@ const Card = ({ value, suit, handleOnClick, isActive, className }) => {
       <div
         className={
           isActive
-            ? `card__container ${className} ${isEmpty ? 'card__container--empty' : ''}`
-            : `card__container card__container--inactive ${isEmpty ? 'card__container--empty' : ''}`
+            ? `card__container ${className} ${
+                isEmpty ? "card__container--empty" : ""
+              }`
+            : `card__container card__container--inactive ${
+                isEmpty ? "card__container--empty" : ""
+              }`
         }
-        onClick={() => handleOnClick({ value, suit })}
+        onClick={isActive ? () => handleOnClick({ value, suit }) : null}
       >
         <p className="card__value">{value}</p>
         <img src={icon} alt="" className="card__icon" />

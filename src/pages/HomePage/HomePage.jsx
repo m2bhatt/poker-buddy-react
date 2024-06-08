@@ -3,12 +3,14 @@ import Board from "../../components/Board/Board";
 import Deck from "../../components/Deck/Deck";
 import { useEffect, useState } from "react";
 import "./HomePage.scss";
+import { SnackbarProvider } from "notistack";
 
 const HomePage = ({ token }) => {
   const [deck, setDeck] = useState();
   const [pocketHand, setPocketHand] = useState([]);
   const [boardHand, setBoardHand] = useState([]);
   const [activeCardContainer, setActiveCardContainer] = useState("pocketHand");
+  const [probabilityData, setProbabilityData] = useState();
 
   useEffect(() => {
     setDeck(createDeck());
@@ -20,31 +22,37 @@ const HomePage = ({ token }) => {
 
   return (
     <>
-      <div className="trainer-page">
-        <Probability pocketHand={pocketHand} boardHand={boardHand} />
-        <Board
-          pocketHand={pocketHand}
-          setPocketHand={setPocketHand}
-          boardHand={boardHand}
-          setBoardHand={setBoardHand}
-          setActiveCardContainer={setActiveCardContainer}
-          token={token}
-        />
-        <Deck
-          deck={deck}
-          pocketHand={pocketHand}
-          setPocketHand={setPocketHand}
-          boardHand={boardHand}
-          setBoardHand={setBoardHand}
-          activeCardContainer={activeCardContainer}
-          setActiveCardContainer={setActiveCardContainer}
-        />
-      </div>
+      <SnackbarProvider className="saveround__snackbar">
+        <div className="trainer-page">
+          <Probability pocketHand={pocketHand} boardHand={boardHand} probabilityData={probabilityData} setProbabilityData={setProbabilityData}/>
+          <Board
+            pocketHand={pocketHand}
+            setPocketHand={setPocketHand}
+            boardHand={boardHand}
+            setBoardHand={setBoardHand}
+            setActiveCardContainer={setActiveCardContainer}
+            token={token}
+            createDeck={createDeck}
+            setDeck={setDeck}
+            setProbabilityData={setProbabilityData}
+          />
+          <Deck
+            deck={deck}
+            setDeck={setDeck}
+            pocketHand={pocketHand}
+            setPocketHand={setPocketHand}
+            boardHand={boardHand}
+            setBoardHand={setBoardHand}
+            activeCardContainer={activeCardContainer}
+            setActiveCardContainer={setActiveCardContainer}
+          />
+        </div>
+      </SnackbarProvider>
     </>
   );
 };
 
-const createDeck = () => {
+export const createDeck = () => {
   const values = [
     "2",
     "3",
@@ -65,7 +73,7 @@ const createDeck = () => {
   let deck = [];
   for (let suit of suits) {
     for (let value of values) {
-      deck.push({ suit, value });
+      deck.push({ suit, value, isActive: true });
     }
   }
   return deck;
