@@ -14,15 +14,15 @@ const Board = ({
   setActiveCardContainer,
   token,
   createDeck, 
-  setDeck,
-  probabilityData, 
-  setProbabilityData
+  setDeck, 
+  setProbabilityData, 
+  className
 }) => {
   const [outcome, setOutcome] = useState("");
 
   return (
     
-    <main className="board">
+    <main className={`board ${className}`}>
       <div className="board__image">
         <BoardHands boardHand={boardHand} className={`board__board-hands`} />
         <PocketHands

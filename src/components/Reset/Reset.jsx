@@ -20,5 +20,3 @@ const Reset = ({ className, setPocketHand, setBoardHand, setActiveCardContainer,
 };
 
 export default Reset;
-
-//TODO - Reset outcomes, probability

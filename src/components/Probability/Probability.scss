@@ -1,3 +1,9 @@
+@use "../../styles/partials/breakpoints";
+
 .probability {
-  width: 30%;
+  width: 100%;
+
+  @include breakpoints.tablet {
+    width: 40%;
+  }
 }

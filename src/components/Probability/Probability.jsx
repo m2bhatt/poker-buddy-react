@@ -1,13 +1,11 @@
 import { TexasHoldem } from "unknown-poker";
 import formatCardList from "../../utils/FormatCardList";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import PokerHandsList from "../PokerHandsList/PokerHandsList";
 import "./Probability.scss";
 
-const Probability = ({ pocketHand, boardHand, probabilityData, setProbabilityData }) => {
-  // const [probabilityData, setProbabilityData] = useState();
+const Probability = ({ pocketHand, boardHand, probabilityData, setProbabilityData, className }) => {
   
-
   function calculateProbability() {
     setProbabilityData(null);
 
@@ -42,7 +40,7 @@ const Probability = ({ pocketHand, boardHand, probabilityData, setProbabilityDat
 
   return (
     <>
-    <div className="probability">
+    <div className={`probability ${className}`}>
       <PokerHandsList yourHandChances={yourHandChances} oppHandChances={oppHandChances} />
     </div>
     </>

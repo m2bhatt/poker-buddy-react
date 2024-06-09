@@ -1,5 +1,6 @@
 @use "../../styles/partials/typography";
 @use "../../styles/partials/colors";
+@use "../../styles/partials/breakpoints";
 
 .pokerhand {
   display: flex;
@@ -20,12 +21,16 @@
     margin: 0;
   }
   &__cards {
-    display: flex;
+    display: none;
+
+    @include breakpoints.desktop {
+      display: flex;
+    }
   }
 
   &__number {
     padding-right: 1rem;
     padding-left: 1rem;
-    width: 20%;
+    width: 10%;
   }
 }

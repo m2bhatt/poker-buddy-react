@@ -36,8 +36,8 @@ const AccountPage = ({ token }) => {
   return (
     <div className="account">
       {user ? (
-        <div className="account__title">
-          <h1>Welcome, {user.user_name}</h1>
+        <div className="account__container">
+          <h1 className="account__title">Welcome, {user.user_name}</h1>
           <HandsList token={token}/>
         </div>
       ) : (

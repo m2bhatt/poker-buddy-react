@@ -1,4 +1,10 @@
+@use "../../styles/partials/breakpoints";
+
 .deck {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  @include breakpoints.tablet {
+    flex-direction: row;
+  }
 }

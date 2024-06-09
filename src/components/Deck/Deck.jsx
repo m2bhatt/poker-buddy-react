@@ -11,10 +11,11 @@ const Deck = ({
   boardHand,
   setBoardHand,
   activeCardContainer,
-  setActiveCardContainer
+  setActiveCardContainer,
+  className
 }) => {
   return (
-    <aside className="deck">
+    <aside className={`deck ${className}`}>
       {suits.map((suit) => (
         <DeckColumn
           key={suit}

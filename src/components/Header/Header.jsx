@@ -1,5 +1,5 @@
 import "./Header.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = ({ isLoggedIn, setToken }) => {
   const performLogout = () => {
@@ -9,30 +9,32 @@ const Header = ({ isLoggedIn, setToken }) => {
 
   return (
     <div className="header">
-      <p className="header__logo">Poker Buddy</p>
+      <NavLink to="/trainer">
+        <p className="header__logo">Poker Buddy</p>
+      </NavLink>
       <ul className="header__list">
         {isLoggedIn ? (
           <>
-          <Link to="/trainer">
+          <NavLink to="/trainer">
               <li className="header__item">Trainer</li>
-            </Link>
-            <Link to="/account">
+            </NavLink>
+            <NavLink to="/account">
               <li className="header__item">Account</li>
-            </Link>
-            <Link to="/login">
+            </NavLink>
+            <NavLink to="/login">
             <li className="header__item" onClick={performLogout}>
               Log out
             </li>
-            </Link>
+            </NavLink>
           </>
         ) : (
           <>
-            <Link to="/signup">
+            <NavLink to="/signup">
               <li className="header__item">Register</li>
-            </Link>
-            <Link to="/login">
+            </NavLink>
+            <NavLink to="/login">
               <li className="header__item">Login</li>
-            </Link>
+            </NavLink>
           </>
         )}
       </ul>

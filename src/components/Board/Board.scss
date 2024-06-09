@@ -1,15 +1,22 @@
+@use "../../styles/partials/breakpoints";
+
 .board {
-  // background-color: white;
-  width: 20%;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  width: 80%;
+  align-items: center;
+
+  @include breakpoints.tablet {
+    width: 25%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
 
   &__image {
     background-color: #49AD49;
     border: 8px solid #429C42;
     outline: 10px solid #A95454;
-    height: 150px;
-    border-radius: 65px;
+    height: 9rem;
+    border-radius: 4rem;
     position: relative;
     margin-top: 2rem;
     z-index: 0;

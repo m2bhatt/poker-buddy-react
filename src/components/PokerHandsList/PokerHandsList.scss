@@ -1,3 +1,5 @@
+@use "../../styles/partials/breakpoints";
+
 .pokerhandslist {
   &__list {
     list-style-type: none;
@@ -13,6 +15,15 @@
     border-top-right-radius: 4px;
     margin: 0;
   }
-}
 
-//TODO - change the flex so it's aligned better as the header 
+  &__list-right {
+    width: 42%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoints.desktop {
+      width: 25%;
+    }
+  }
+}

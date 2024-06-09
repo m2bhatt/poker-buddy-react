@@ -1,7 +1,38 @@
 @use "../../styles/partials/typography";
+@use "../../styles/partials/breakpoints";
+@use "../../styles/partials/colors";
 
-.trainer-page {
+.trainer {
   padding: 1rem 2rem;
-  display: flex;
   justify-content: space-between;
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include breakpoints.tablet {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__deck {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid colors.$border-color;
+
+    @include breakpoints.tablet {
+      border-bottom: none;
+    }
+  }
+
+  &__board {
+    margin-bottom: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid colors.$border-color;
+
+    @include breakpoints.tablet {
+      border-bottom: none;
+    }
+  }
+
 }

@@ -2,6 +2,7 @@
 
 .handsitem {
   background-color: colors.$row-color;
+  border-bottom: 1px solid colors.$border-color;
 
   &:hover {
     background-color: colors.$row-hover-color;

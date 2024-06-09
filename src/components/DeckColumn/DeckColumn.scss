@@ -1,5 +1,13 @@
+@use "../../styles/partials/breakpoints";
+
 .deckcolumn {
+  display: flex;
+
   &:hover {
     cursor: url("./hover.svg"), auto;
+  }
+
+  @include breakpoints.tablet {
+    display: block;
   }
 }

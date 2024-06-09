@@ -23,9 +23,14 @@ const HomePage = ({ token }) => {
   return (
     <>
       <SnackbarProvider className="saveround__snackbar">
-        <div className="trainer-page">
-          <Probability pocketHand={pocketHand} boardHand={boardHand} probabilityData={probabilityData} setProbabilityData={setProbabilityData}/>
-          <Board
+        <div className="trainer">
+          <Probability className={`trainer__probability`}
+            pocketHand={pocketHand}
+            boardHand={boardHand}
+            probabilityData={probabilityData}
+            setProbabilityData={setProbabilityData}
+          />
+          <Board className={`trainer__board`}
             pocketHand={pocketHand}
             setPocketHand={setPocketHand}
             boardHand={boardHand}
@@ -36,7 +41,7 @@ const HomePage = ({ token }) => {
             setDeck={setDeck}
             setProbabilityData={setProbabilityData}
           />
-          <Deck
+          <Deck className={`trainer__deck`}
             deck={deck}
             setDeck={setDeck}
             pocketHand={pocketHand}
