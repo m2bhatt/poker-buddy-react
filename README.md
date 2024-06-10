@@ -32,7 +32,7 @@ This app is a poker trainer that helps new players understand the rank of Poker 
 
 ## Demo 
 
-![video](public/demo.gif)
+![video](readme_assets/demo.gif)
 
 ## Screenshots
 
