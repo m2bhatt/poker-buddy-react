@@ -32,8 +32,7 @@ This app is a poker trainer that helps new players understand the rank of Poker 
 
 ## Demo 
 
-[Watch the demo](https://raw.githubusercontent.com/m2bhatt/poker-buddy-react/main/public/demo.mov)
-
+[Watch the demo](https://github.com/m2bhatt/poker-buddy-react/blob/main/public/demo.mov)
 
 ## Screenshots
 
