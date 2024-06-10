@@ -1,14 +1,16 @@
 import { useState } from "react";
 import "./RegisterForm.scss";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
-const API_URL = import.meta.env.VITE_LOCALHOST;
-
-const RegisterForm = ({ onSubmit, buttonText, successMessage, errorMessage }) => {
-  const [signedUp, setSignedUp] = useState(false);
+const RegisterForm = ({ onSubmit, buttonText, successMessage, errorMessage, signedUp }) => {
   const [error, setError] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    setError(errorMessage);
+  }, [errorMessage]);
 
   const handleChangeUsername = (event) => {
     const newUsername = event.target.value;
@@ -29,11 +31,8 @@ const RegisterForm = ({ onSubmit, buttonText, successMessage, errorMessage }) =>
     if (isFormValid()) {
       try {
         await onSubmit({ username, password });
-        setSignedUp(true);
-        setError(null);
       } catch (error) {
         console.error("Error while processing the form", error);
-        setSignedUp("");
         setError(errorMessage);
       }
     } else {
@@ -69,10 +68,10 @@ const RegisterForm = ({ onSubmit, buttonText, successMessage, errorMessage }) =>
         </label>
 
         <button className="form__button">{buttonText}</button>
-        {signedUp && (
-          <div className="form__copy">
-            {successMessage}
-            <Link to="/login">log in</Link>
+        {signedUp && !error && (
+          <div className="form__copy--success">
+            {`${successMessage} `}
+            <Link to="/login">Log in</Link>
           </div>
         )}
         {error && <div className="form__copy">{error}</div>}

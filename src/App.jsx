@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage setToken={setToken} />} />
-        <Route path="/trainer" element={<HomePage token={token} />} />
+        <Route path="/" element={<HomePage token={token} />} />
         <Route path="/account" element={<AccountPage token={token}/>} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

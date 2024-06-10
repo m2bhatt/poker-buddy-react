@@ -9,13 +9,13 @@ const Header = ({ isLoggedIn, setToken }) => {
 
   return (
     <div className="header">
-      <NavLink to="/trainer">
+      <NavLink to="/">
         <p className="header__logo">Poker Buddy</p>
       </NavLink>
       <ul className="header__list">
         {isLoggedIn ? (
           <>
-          <NavLink to="/trainer">
+          <NavLink to="/">
               <li className="header__item">Trainer</li>
             </NavLink>
             <NavLink to="/account">

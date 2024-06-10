@@ -56,7 +56,13 @@
   }
 
   &__copy {
-    margin-top: 0.5rem;
+    padding-top: 1rem;
     color: colors.$error-color;
+
+
+    &--success {
+      padding-top: 1rem;
+      color: colors.$action-color-primary;
+    }
   }
 }

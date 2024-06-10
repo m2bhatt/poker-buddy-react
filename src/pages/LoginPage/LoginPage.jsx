@@ -15,13 +15,20 @@ const LoginPage = ({ setToken }) => {
 
   const getUser = async ({ username, password }) => {
     const user = { username, password };
-    const getUserRequest = await axios.post(`${API_URL}/users/login`, user);
-    const { token } = getUserRequest.data;
-    localStorage.setItem("token", token);
-    setToken(token);
-    setSignedIn(true);
-    setError("");
-    navigate("/trainer");
+    try {
+      const getUserRequest = await axios.post(`${API_URL}/users/login`, user);
+      const { token } = getUserRequest.data;
+      localStorage.setItem("token", token);
+      setToken(token);
+      setSignedIn(true);
+      navigate("/");
+    } catch (error) {
+      if (error.response && error.response.data && error.response.data.error) {
+        setError(error.response.data.error);
+      } else {
+        setError("An unexpected error occurred.");
+      }
+    }
   };
 
   return (
@@ -31,7 +38,7 @@ const LoginPage = ({ setToken }) => {
         onSubmit={getUser}
         buttonText="Log in"
         successMessage="Login successful."
-        errorMessage="Error in signing in."
+        errorMessage={error}
       />
     </main>
   );
