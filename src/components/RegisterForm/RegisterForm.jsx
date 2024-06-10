@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./RegisterForm.scss";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 const RegisterForm = ({ onSubmit, buttonText, successMessage, errorMessage, signedUp }) => {
   const [error, setError] = useState(null);

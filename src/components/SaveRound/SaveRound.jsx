@@ -42,7 +42,15 @@ const SaveRound = ({ className, pocketHand, setPocketHand, boardHand, setBoardHa
   const handleOnClick = async (event) => {
     event.preventDefault();
     closeSnackbar();
-    if (pocketHand.length < 2) {
+    if (!token) {
+      enqueueSnackbar("Please login to save hand.", {
+        autoHideDuration: 20000,
+        preventDuplicate: true,
+        warning: true,
+        variant: 'error'
+      })
+    }
+    else if (pocketHand.length < 2) {
       enqueueSnackbar("Add your pocket cards before saving hand.", {
         autoHideDuration: 20000,
         preventDuplicate: true,
