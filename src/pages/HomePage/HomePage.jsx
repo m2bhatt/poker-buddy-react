@@ -22,7 +22,10 @@ const HomePage = ({ token }) => {
 
   return (
     <>
-      <SnackbarProvider className="saveround__snackbar">
+      <SnackbarProvider className="saveround__snackbar" iconVariant={{
+    success: '♥️ ',
+    error: '🃏 '
+  }}>
         <div className="trainer">
           <Probability className={`trainer__probability`}
             pocketHand={pocketHand}

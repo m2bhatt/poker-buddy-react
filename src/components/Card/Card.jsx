@@ -1,8 +1,8 @@
 import "./Card.scss";
-import heartsIcon from "../../assets/icons/hearts.png";
-import clubsIcon from "../../assets/icons/clubs.png";
-import diamondsIcon from "../../assets/icons/diamonds.png";
-import spadesIcon from "../../assets/icons/spades.png";
+import heartsIcon from "../../assets/icons/hearts.svg";
+import clubsIcon from "../../assets/icons/clubs.svg";
+import diamondsIcon from "../../assets/icons/diamonds.svg";
+import spadesIcon from "../../assets/icons/spades.svg";
 
 const suitIcons = {
   hearts: heartsIcon,
