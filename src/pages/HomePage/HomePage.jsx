@@ -17,7 +17,7 @@ const HomePage = ({ token }) => {
   }, []);
 
   if (!deck) {
-    return <div>Loading....in home page</div>;
+    return <div>loading...</div>;
   }
 
   return (

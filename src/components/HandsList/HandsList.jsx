@@ -38,7 +38,7 @@ const HandsList = ({ token }) => {
   }, []);
 
   if (handsData.length === 0) {
-    return <div className="loader">loading..</div>;
+    return <div className="loader">No hands saved yet.</div>;
   }
 
   return (

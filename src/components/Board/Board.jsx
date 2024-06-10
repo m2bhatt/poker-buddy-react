@@ -47,6 +47,9 @@ const Board = ({
           token={token}
           outcome={outcome}
           setOutcome={setOutcome}
+          createDeck={createDeck}
+          setDeck={setDeck}
+          setProbabilityData={setProbabilityData}
         />
       <Reset
         className={`board__reset`}

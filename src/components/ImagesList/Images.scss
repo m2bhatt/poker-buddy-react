@@ -32,7 +32,6 @@
 
     &--half-bottom {
       @include breakpoints.tablet {
-        height: 40vh;
         position: absolute;
         margin-bottom: 30px;
         top: 0;
@@ -50,7 +49,6 @@
 
     &--half-top {
       @include breakpoints.tablet {
-        height: 40vh;
         position: absolute;
         bottom: 0;
         transform: translateY(-50%);
@@ -60,50 +58,3 @@
     }
   }
 }
-
-// .images {
-//   height: 100vh;
-//   overflow: hidden;
-//   width: 50%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   position: relative;
-//   padding-top: 20px;
-//   background-color: #DCE1DE;
-
-//   &__container {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     position: relative;
-//   }
-
-//   &__image {
-//     width: 100%;
-
-//     &--half-bottom {
-//       height: 40vh;
-//       position: absolute;
-//       margin-bottom: 30px;
-//       top: 0;
-//       transform: translateY(50%);
-//       opacity: 50%;
-//       border-radius: 10px;
-//     }
-
-//     &--full {
-//       z-index: 1;
-//     }
-
-//     &--half-top {
-//       height: 40vh;
-//       position: absolute;
-//       bottom: 0;
-//       transform: translateY(-50%);
-//       opacity: 50%;
-//       border-radius: 10px;
-//     }
-//   }
-// }

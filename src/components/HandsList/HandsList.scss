@@ -22,3 +22,11 @@
     padding: 1rem;
   }
 }
+
+.loader {
+  padding-left: 1rem;
+
+  @include breakpoints.tablet {
+    padding-left: 4rem;
+  }
+}

@@ -10,8 +10,20 @@ const handOutcome = {
   Split: 2,
 };
 
-const SaveRound = ({ className, pocketHand, setPocketHand, boardHand, setBoardHand, token, outcome, setOutcome, setActiveCardContainer }) => {
-
+const SaveRound = ({
+  className,
+  pocketHand,
+  setPocketHand,
+  boardHand,
+  setBoardHand,
+  token,
+  outcome,
+  setOutcome,
+  setActiveCardContainer,
+  createDeck,
+  setDeck,
+  setProbabilityData
+}) => {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   async function postHand() {
@@ -36,7 +48,9 @@ const SaveRound = ({ className, pocketHand, setPocketHand, boardHand, setBoardHa
     setPocketHand([]);
     setBoardHand([]);
     setOutcome("");
-    setActiveCardContainer('pocketHand');
+    setActiveCardContainer("pocketHand");
+    setDeck(createDeck());
+    setProbabilityData();
   };
 
   const handleOnClick = async (event) => {
@@ -46,32 +60,28 @@ const SaveRound = ({ className, pocketHand, setPocketHand, boardHand, setBoardHa
       enqueueSnackbar("Please login to save hand.", {
         autoHideDuration: 20000,
         preventDuplicate: true,
-        warning: true,
-        variant: 'error'
-      })
-    }
-    else if (pocketHand.length < 2) {
+        variant: "error",
+      });
+    } else if (pocketHand.length < 2) {
       enqueueSnackbar("Add your pocket cards before saving hand.", {
         autoHideDuration: 20000,
         preventDuplicate: true,
-        warning: true,
-        variant: 'error'
-      })
-    }
-    else if (!outcome) {
+        variant: "error",
+      });
+    } else if (!outcome) {
       enqueueSnackbar("Add outcome in order to save hand!", {
         autoHideDuration: 20000,
         preventDuplicate: true,
-        variant: 'error'
-      })
+        variant: "error",
+      });
     } else {
       await postHand();
       enqueueSnackbar("Hand saved successfully!", {
         autoHideDuration: 20000,
         preventDuplicate: true,
-        variant: 'success'
-    })
-    resetHand();
+        variant: "success",
+      });
+      resetHand();
     }
   };
 
@@ -85,6 +95,3 @@ const SaveRound = ({ className, pocketHand, setPocketHand, boardHand, setBoardHa
 };
 
 export default SaveRound;
-
-//TODO - add condition to check if there is a user logged in. 
-//look at account page for implementation 

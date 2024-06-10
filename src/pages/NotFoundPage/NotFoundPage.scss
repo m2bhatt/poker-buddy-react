@@ -1,0 +1,27 @@
+@use "../../styles/partials/breakpoints";
+
+.notfoundpage {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+
+  @include breakpoints.tablet {
+    padding-left: 2rem;
+  }
+
+  &__title {
+    font-size: 1rem;
+  }
+
+  &__image {
+    width: 20vw;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+  }
+
+  &__copy {
+    a {
+      color: black;
+    }
+  }
+}
