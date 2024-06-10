@@ -8,7 +8,12 @@ const API_URL = import.meta.env.VITE_LOCALHOST;
 const SignUpPage = () => {
   const postUser = async ({ username, password }) => {
     const user = { username, password };
-    await axios.post(`${API_URL}/users/signup`, user);
+    try {
+      const request = await axios.post(`${API_URL}/users/signup`, user);
+      console.log('User created successfully:', request.data);
+    } catch (error) {
+      console.error('Error creating user:', error);
+    }
   };
 
   return (

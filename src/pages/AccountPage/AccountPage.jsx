@@ -29,10 +29,6 @@ const AccountPage = ({ token }) => {
     setUser(null);
   }}
 
-  if(!user) {
-    return <div>Loading....in home page</div>;
-  }
-
   return (
     <div className="account">
       {user ? (
