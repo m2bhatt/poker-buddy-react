@@ -1,10 +1,10 @@
-import dogImage1 from "../../assets/images/poker_image_1.jpg";
-import dogImage2 from "../../assets/images/poker_image_2.jpeg";
-import dogImage3 from "../../assets/images/poker_image_3.jpeg";
+import catImage1 from "../../assets/images/cat1.jpeg";
+import catImage2 from "../../assets/images/cat2.jpeg";
+import catImage3 from "../../assets/images/cat3.jpeg";
 import "./Images.scss";
 import { useState, useEffect } from "react";
 
-const images = [dogImage1, dogImage2, dogImage3];
+const images = [catImage1, catImage2, catImage3];
 
 const Images = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

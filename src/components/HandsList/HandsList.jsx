@@ -6,7 +6,7 @@ import HandsItem from "../HandsItem/HandsItem";
 const API_URL = import.meta.env.VITE_LOCALHOST;
 
 const handOutcome = {
-  0: 'Lose',
+  0: 'Fold',
   1: 'Win',
   2: 'Split'
 }

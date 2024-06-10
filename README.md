@@ -1,28 +1,15 @@
 # Poker Buddy
 
 ## Overview
-This app is a poker trainer that helps new players check the probability of their hands against the ranked Poker hands set. The user can select the cards they're dealt with, and check their odds of creating a specific Poker hand against the cards on the board. 
+This app is a poker trainer that helps new players understand the rank of Poker Hands, the chace of winning against one opponent with specific Poker Hand. The user can select the cards they're dealt with, and check their odds of creating a specific Poker hand against the cards on the board. 
 
-### Problem
-As a new poker player, it can be overwhelming to understand the different Poker hands and their order of winning. It's also hard to calculate the probability of the different Poker hands in a short span of time since generally you only have a few seconds to decide if you want to bet, fold or raise during your turn. 
-
-### User Profile
-Users who enjoy playing poker online and are continuing to learn the order of Poker hands, and the probability of hands possible given what's in their hand vs what's on the board, and the potential hands of other players given the cards on the board. 
-
-### Features
-1. As a user, I should be able to sign up. 
-2. As a user, I should be able to login if I already have an account. 
-2. As a user, I should be able to see all the cards in a deck. 
-2. As a user, I should be able to see the order of the different Poker hands.
-3. As a user, I should be able to select which cards are in my hand, and which cards are on the board. 
-4. As a user, I should be able to see the probability of Poker hands once I have selected the cards in my hand, and the first draw of 3 hands on the board. 
-5. As a user, I should be able to see the probability of Poker hands once other cards are revealed. 
-6. As a user, I should be able to select the outcome of my play (fold, win). 
-
-### Stretch Goals   
-7. As a user, I should be able to save my hand, hands on the board, and the outcome of my play.
-8. As a user, I should be able to reset the board before each round. 
-9. As a user, I should be able to delete a previously saved round from my accounts page. 
+## Features
+1. Ability to register and sign in to your account. 
+2. Select hand cards and table cards. 
+3. Calculate chance of the Poker Hand winning against one opponent. 
+4. Save your hand cards, table cards, and outcome of each round. 
+5. Reset the hand cards, table cards, outcome, and chances of winning. 
+6. Review your saved hands in your account page. 
 
 ## Implementation
 
@@ -43,41 +30,28 @@ c. dotenv
 d. bcryptjs
 7. Poker probability library
 
-### APIs
-No external APIs will be used in the MVP. The app will use local server to fetch data from mySQL databases. 
+### Screenshots
 
-### Sitemap
-1. Signup Page  
-This page allows user to sign up to save their plays. 
-
-2. Login Page  
-This page allows users to login if they have an existing account. 
-
-3. Poker Trainer Page  
-This is the main page of the app, with the functionality to select their hand,save their hand, and review their probability.
-
-4. Account page that stores all the saved plays.  
-This page saves all your played hands if you chose to save them from the poker trainer page. 
-
-### Mockups
-> The mockups are subject to change including font style, colour palette and images.
-
-| ![Sign up Page](/readme_images/Signup_Page.png) |
+| ![Sign up Page](/readme_images/register_page.png) |
 | :--: |
-| *Sign Up/Login Page* |
-| Both Sign up and Login pages will have a similar layout. |
+| *Sign Up Page* |
 
 
 
-| ![Trainer Page](/readme_images/Trainer_Page.png) |
+| ![Trainer Page](/readme_images/initial_state_loggedin.png) |
 | :--: |
 | *Trainer Page* |
-| This will be the main page of the site. |
+| This is the main page of the site in its initial state. |
 
-| ![Account Page](/readme_images/Account_Page.png) |
+| ![Trainer Page](/readme_images/user_input_state_loggedin.png) |
+| :--: |
+| *Trainer Page* |
+| This is the main page after user interaction. |
+
+| ![Account Page](/readme_images/account_page.png) |
 | :--: |
 | *Account Page* |
-| This will be the account page, which will get populated by the saved hands. |
+| This is the account page displaying user's saved hands. |
 
 ### Data
 
@@ -187,16 +161,16 @@ Parameters:
 
 1. JWT for authentication. Once logged in, users will be able to see their saved hands within their account. 
 
-## Roadmap
+<!-- ## Roadmap
 
 ### Foundations
 1. Create client side directory with React, set up routes and boiletplate pages and components. 
 2. Create server side directory with Express, set up routes and seed data for users and hands.
 3. Create and run migrations using the seed data. 
 4. Create and initialize both client and server side Github repos. 
-5. Create a chart to outline states, component relationships, and API requests. 
+5. Create a chart to outline states, component relationships, and API requests.  -->
 
-### Feature Build
+<!-- ### Feature Build
 
 1. **Sign Up / Login Functionality** (~3 days)
 * Implement SWT to add authentication for users to sign up and login.
@@ -222,13 +196,15 @@ Parameters:
 5. **Presentation**
 * Create assets for demo day
 * Upload assets for demo day 
-* DEMO DAY!
+* DEMO DAY! -->
 
-## Nice-to-haves
-1. Animation on cards when they're saved. 
-2. Add other players to the board
-3. Ability to write notes 
-4. Ability to sort your saved plays by date and outcome 
-5. Ability for the user to retrieve cards from their account to the poker trainer page to review the probability 
+## Next Steps
+1. Animate cards when they're added to the Pocket Hand, and Table Cards. 
+2. Animate card when they're saved to the account. 
+3. Add other players to the board, including the chance of winning when additional players are added. 
+4. Ability to write notes when saving each round. 
+5. Ability to sort your saved plays by date and outcome.
+6. Paginate the front end and API calls in the back end to only display 10 saved hands at a time. 
+7. Ability for the user to retrieve cards from their account to the poker trainer page to review the probability 
 
 

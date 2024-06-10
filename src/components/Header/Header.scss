@@ -54,6 +54,10 @@
       width: 20%;
       justify-content: space-around;
     }
+
+    @include breakpoints.desktop {
+      width: 16%;
+    }
   }
 
   &__item {
