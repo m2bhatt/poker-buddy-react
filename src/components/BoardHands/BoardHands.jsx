@@ -1,6 +1,6 @@
-import Card from "../Card/Card";
-import { useEffect } from "react";
 import "./BoardHands.scss";
+import Card from "../Card/Card";
+
 
 const BoardHands = ({ boardHand, className }) => {
   if (!boardHand) {
@@ -10,14 +10,15 @@ const BoardHands = ({ boardHand, className }) => {
   return (
     <>
       <aside className={`boardhands ${className}`}>
-        {[...boardHand, {}, {}, {}, {}, {}].slice(0, 5).map ((card, index) => (
+        {[...boardHand, {}, {}, {}, {}, {}].slice(0, 5).map((card, index) => (
           <Card
-          key={`empty_${index}`}
-          value={card.value}
-          suit={card.suit}
-          isActive="true" />
+            key={`empty_${index}`}
+            value={card.value}
+            suit={card.suit}
+            isActive="true"
+          />
         ))}
-        </ aside>
+      </aside>
     </>
   );
 };

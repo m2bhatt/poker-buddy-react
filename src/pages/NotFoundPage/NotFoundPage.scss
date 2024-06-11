@@ -1,4 +1,5 @@
 @use "../../styles/partials/breakpoints";
+@use "../../styles/partials/colors";
 
 .notfoundpage {
   display: flex;
@@ -21,7 +22,7 @@
 
   &__copy {
     a {
-      color: black;
+      color: colors.$bg-color-headers;
     }
   }
 }

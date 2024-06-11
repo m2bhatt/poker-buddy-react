@@ -1,11 +1,16 @@
 import { TexasHoldem } from "unknown-poker";
-import formatCardList from "../../utils/FormatCardList";
 import { useEffect } from "react";
-import PokerHandsList from "../PokerHandsList/PokerHandsList";
 import "./Probability.scss";
+import formatCardList from "../../utils/FormatCardList";
+import PokerHandsList from "../PokerHandsList/PokerHandsList";
 
-const Probability = ({ pocketHand, boardHand, probabilityData, setProbabilityData, className }) => {
-  
+const Probability = ({
+  pocketHand,
+  boardHand,
+  probabilityData,
+  setProbabilityData,
+  className,
+}) => {
   function calculateProbability() {
     setProbabilityData(null);
 
@@ -22,7 +27,7 @@ const Probability = ({ pocketHand, boardHand, probabilityData, setProbabilityDat
   }
 
   useEffect(() => {
-    if (pocketHand.length < 2) return
+    if (pocketHand.length < 2) return;
 
     async function getData() {
       const result = await calculateProbability();
@@ -30,21 +35,50 @@ const Probability = ({ pocketHand, boardHand, probabilityData, setProbabilityDat
     }
 
     getData();
-  }, [pocketHand,boardHand]) 
- 
-  const initialPokerChances = { "Straight Flush": 0, "Four of a Kind" :0, "Full House": 0, 'Flush': 0, 'Straight': 0, "Three of a Kind": 0, "Two Pair": 0,  "Pair": 0, "High Card": 0 }
-  const yourHandChances = Object.assign(initialPokerChances, probabilityData?.yourHandChances);
+  }, [pocketHand, boardHand]);
 
-  const initialOppHandChances = { "Straight Flush": 0, "Four of a Kind" :0, "Full House": 0, 'Flush': 0, 'Straight': 0, "Three of a Kind": 0, "Two Pair": 0,  "Pair": 0, "High Card": 0 }
-  const oppHandChances = Object.assign(initialOppHandChances, probabilityData?.oppHandChances);
+  const initialPokerChances = {
+    "Straight Flush": 0,
+    "Four of a Kind": 0,
+    "Full House": 0,
+    "Flush": 0,
+    "Straight": 0,
+    "Three of a Kind": 0,
+    "Two Pair": 0,
+    "Pair": 0,
+    "High Card": 0,
+  };
+  const yourHandChances = Object.assign(
+    initialPokerChances,
+    probabilityData?.yourHandChances
+  );
+
+  const initialOppHandChances = {
+    "Straight Flush": 0,
+    "Four of a Kind": 0,
+    "Full House": 0,
+    "Flush": 0,
+    "Straight": 0,
+    "Three of a Kind": 0,
+    "Two Pair": 0,
+    "Pair": 0,
+    "High Card": 0,
+  };
+  const oppHandChances = Object.assign(
+    initialOppHandChances,
+    probabilityData?.oppHandChances
+  );
 
   return (
     <>
-    <div className={`probability ${className}`}>
-      <PokerHandsList yourHandChances={yourHandChances} oppHandChances={oppHandChances} />
-    </div>
+      <div className={`probability ${className}`}>
+        <PokerHandsList
+          yourHandChances={yourHandChances}
+          oppHandChances={oppHandChances}
+        />
+      </div>
     </>
-  )
+  );
 };
 
 export default Probability;

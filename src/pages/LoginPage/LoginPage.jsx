@@ -1,9 +1,9 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "./LoginPage.scss";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import Images from "../../components/ImagesList/Images";
-import "./LoginPage.scss";
 
 const API_URL = import.meta.env.VITE_LOCALHOST;
 

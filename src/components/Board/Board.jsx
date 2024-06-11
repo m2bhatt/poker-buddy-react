@@ -1,10 +1,11 @@
+import { useState } from "react";
 import "./Board.scss";
 import PocketHands from "../PocketHands/PocketHands";
 import BoardHands from "../BoardHands/BoardHands";
 import Outcome from "../Outcome/Outcome";
 import Reset from "../Reset/Reset";
 import SaveRound from "../SaveRound/SaveRound";
-import { useState } from "react";
+
 
 const Board = ({
   pocketHand,
@@ -13,15 +14,14 @@ const Board = ({
   setBoardHand,
   setActiveCardContainer,
   token,
-  createDeck, 
-  setDeck, 
-  setProbabilityData, 
-  className
+  createDeck,
+  setDeck,
+  setProbabilityData,
+  className,
 }) => {
   const [outcome, setOutcome] = useState("");
 
   return (
-    
     <main className={`board ${className}`}>
       <div className="board__image">
         <BoardHands boardHand={boardHand} className={`board__board-hands`} />
@@ -31,12 +31,12 @@ const Board = ({
           className={`board__pocket-hands`}
         />
       </div>
-        <Outcome
-          className={`board__outcome`}
-          outcome={outcome}
-          setOutcome={setOutcome}
-        />
-        <div className="board__actions-container">
+      <Outcome
+        className={`board__outcome`}
+        outcome={outcome}
+        setOutcome={setOutcome}
+      />
+      <div className="board__actions-container">
         <SaveRound
           className={`board__saveround`}
           pocketHand={pocketHand}
@@ -51,18 +51,17 @@ const Board = ({
           setDeck={setDeck}
           setProbabilityData={setProbabilityData}
         />
-      <Reset
-        className={`board__reset`}
-        setPocketHand={setPocketHand}
-        setBoardHand={setBoardHand}
-        setActiveCardContainer={setActiveCardContainer}
-        setOutcome={setOutcome}
-        createDeck={createDeck}
-        setDeck={setDeck}
-        setProbabilityData={setProbabilityData}
-      />
+        <Reset
+          className={`board__reset`}
+          setPocketHand={setPocketHand}
+          setBoardHand={setBoardHand}
+          setActiveCardContainer={setActiveCardContainer}
+          setOutcome={setOutcome}
+          createDeck={createDeck}
+          setDeck={setDeck}
+          setProbabilityData={setProbabilityData}
+        />
       </div>
-    
     </main>
   );
 };

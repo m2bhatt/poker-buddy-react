@@ -6,10 +6,10 @@ import HandsItem from "../HandsItem/HandsItem";
 const API_URL = import.meta.env.VITE_LOCALHOST;
 
 const handOutcome = {
-  0: 'Fold',
-  1: 'Win',
-  2: 'Split'
-}
+  0: "Fold",
+  1: "Win",
+  2: "Split",
+};
 
 const HandsList = ({ token }) => {
   const [handsData, setHandsData] = useState([]);
@@ -22,10 +22,10 @@ const HandsList = ({ token }) => {
         },
       });
       const handsData = response.data.map((hand) => ({
-        date: new Date(hand.created_at).toLocaleDateString('en-US'),
+        date: new Date(hand.created_at).toLocaleDateString("en-US"),
         playerCards: hand.player_cards.cards,
         boardCards: hand.table_cards.cards,
-        outcome: handOutcome[hand.outcome]
+        outcome: handOutcome[hand.outcome],
       }));
       setHandsData(handsData);
     } catch (error) {
@@ -45,10 +45,18 @@ const HandsList = ({ token }) => {
     <table className="handslist">
       <thead className="handslist__header">
         <tr>
-          <th scope="col" className="handslist__header-item">Date</th>
-          <th scope="col" className="handslist__header-item">Pocket Cards</th>
-          <th scope="col" className="handslist__header-item">Board Cards</th>
-          <th scope="col" className="handslist__header-item">Outcome</th>
+          <th scope="col" className="handslist__header-item">
+            Date
+          </th>
+          <th scope="col" className="handslist__header-item">
+            Pocket Cards
+          </th>
+          <th scope="col" className="handslist__header-item">
+            Board Cards
+          </th>
+          <th scope="col" className="handslist__header-item">
+            Outcome
+          </th>
         </tr>
       </thead>
       <tbody>

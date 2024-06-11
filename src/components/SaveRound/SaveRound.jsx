@@ -1,6 +1,6 @@
-import "./SaveRound.scss";
 import axios from "axios";
 import { useSnackbar } from "notistack";
+import "./SaveRound.scss";
 
 const API_URL = import.meta.env.VITE_LOCALHOST;
 
@@ -22,7 +22,7 @@ const SaveRound = ({
   setActiveCardContainer,
   createDeck,
   setDeck,
-  setProbabilityData
+  setProbabilityData,
 }) => {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
