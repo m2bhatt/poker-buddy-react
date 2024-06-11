@@ -145,6 +145,8 @@ cp .env.sample .env
 After copying the env file, replace all the expected values, and run the server using the following. 
 
 ```bash
+npm run migrate
+npm run seed
 npm run start 
 ```
 
