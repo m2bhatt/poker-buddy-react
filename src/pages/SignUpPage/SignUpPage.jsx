@@ -1,8 +1,8 @@
+import { useState } from "react";
+import axios from "axios";
+import "./SignUpPage.scss";
 import Images from "../../components/ImagesList/Images";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
-import "./SignUpPage.scss";
-import axios from "axios";
-import { useState } from "react";
 
 const API_URL = import.meta.env.VITE_LOCALHOST;
 

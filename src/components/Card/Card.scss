@@ -1,6 +1,8 @@
+@use "../../styles/partials/colors";
+
 .card {
   &__container {
-    background-color: white;
+    background-color: colors.$bg-color-secondary;
     filter: drop-shadow(1px 1px);
     border-radius: 4px;
     height: 45px;
@@ -10,7 +12,7 @@
     margin-left: 4px;
 
     &--inactive {
-      background-color: #c2bdba;
+      background-color: colors.$card-inactive-color;
       opacity: 50%;
 
       &:hover {
@@ -19,7 +21,11 @@
     }
 
     &--empty {
-      background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+      background: radial-gradient(
+        circle,
+        rgba(238, 174, 202, 1) 0%,
+        rgba(148, 187, 233, 1) 100%
+      );
     }
   }
 
@@ -27,7 +33,6 @@
     margin: 0;
     padding-top: 2px;
     padding-left: 2px;
-
   }
 
   &__icon {

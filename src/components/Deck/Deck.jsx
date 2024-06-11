@@ -1,5 +1,5 @@
-import DeckColumn from "../DeckColumn/DeckColumn";
 import "./Deck.scss";
+import DeckColumn from "../DeckColumn/DeckColumn";
 
 const suits = ["Hearts", "Diamonds", "Spades", "Clubs"];
 
@@ -12,7 +12,7 @@ const Deck = ({
   setBoardHand,
   activeCardContainer,
   setActiveCardContainer,
-  className
+  className,
 }) => {
   return (
     <aside className={`deck ${className}`}>
@@ -28,7 +28,6 @@ const Deck = ({
           setBoardHand={setBoardHand}
           activeCardContainer={activeCardContainer}
           setActiveCardContainer={setActiveCardContainer}
-         
         />
       ))}
     </aside>

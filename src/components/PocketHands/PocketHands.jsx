@@ -1,5 +1,5 @@
-import Card from "../Card/Card";
 import "./PocketHands.scss";
+import Card from "../Card/Card";
 
 const PocketHands = ({ pocketHand, className }) => {
   if (!pocketHand) {

@@ -1,34 +1,45 @@
 # Poker Buddy
 
 ## Overview
-This app is a poker trainer that helps new players understand the rank of Poker Hands, the chace of winning against one opponent with specific Poker Hand. The user can select the cards they're dealt with, and check their odds of creating a specific Poker hand against the cards on the board. 
+Poker Buddy is a poker trainer app designed to help new players understand the ranking of Poker Hands and their chances of winning against one opponent. Users can select and save their dealt cards, the table cards, and the outcome of each round.
 
 ## Features
-1. Ability to register and sign in to your account. 
+1. Register and sign in to your account. 
 2. Select hand cards and table cards. 
-3. Calculate chance of the Poker Hand winning against one opponent. 
+3. Calculate chance of your Poker Hand winning against one opponent. 
 4. Save your hand cards, table cards, and outcome of each round. 
-5. Reset the hand cards, table cards, outcome, and chances of winning. 
-6. Review your saved hands in your account page. 
+5. Reset the hand cards, table cards, outcome, and winning chances. 
+6. Review saved hands on the account page. 
 
 ## Implementation
 
 ### Tech Stack
-1. React 
-2. Sass 
-2. Express
-3. MySQL
-4. JWT
-5. Client Libraries:  
-  a. react  
-  b. react-router  
-  c. axios 
-6. Server libraries  
-  a. knex  
-  b. express  
-  c. dotenv  
-  d. bcryptjs
-7. Poker probability library
+
+#### Front End 
+- React 
+- Sass 
+
+#### Back End 
+- Express
+- MySQL
+
+#### Authentication
+- JWT
+
+
+#### Client Libraries:  
+- react  
+- react-router  
+- axios
+
+#### Server libraries  
+- knex  
+- express  
+- dotenv  
+- bcryptjs
+
+#### External Packages
+- [Poker odds calculator package](https://www.npmjs.com/package/unknown-poker)
 
 ## Demo 
 
@@ -131,19 +142,17 @@ cd poker-buddy-server
 cp .env.sample .env
 ```
 
-After copying the env file, replace all the expected values. 
+After copying the env file, replace all the expected values, and run the server using the following. 
 
 ```bash
 npm run start 
 ```
 
 ## Next Steps
-1. Animate cards when they're added to the Pocket Hand, and Table Cards. 
-2. Animate card when they're saved to the account. 
-3. Add other players to the board, including the chance of winning when additional players are added. 
-4. Ability to write notes when saving each round. 
-5. Ability to sort your saved plays by date and outcome.
-6. Paginate the front end and API calls in the back end to only display 10 saved hands at a time. 
-7. Ability for the user to retrieve cards from their account to the poker trainer page to review the probability 
-
-
+1. Add support for multiple opponents and calculate winning chances based on number of opponents. 
+2. Add pagination on the frontend and in API calls to display 10 saved hands at a time.
+3. Animate cards when added to the Pocket Hand and Table Cards. 
+4. Animate cards when saved to the account.
+5. Enable users to write notes when saving each round. 
+6. Implement sorting of saved plays by date and outcome.
+7. Allow users to retrieve saved cards from their account to the poker trainer page for review. 

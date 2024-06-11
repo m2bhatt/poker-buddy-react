@@ -1,9 +1,9 @@
+import { useEffect, useState } from "react";
+import { SnackbarProvider } from "notistack";
+import "./HomePage.scss";
 import Probability from "../../components/Probability/Probability";
 import Board from "../../components/Board/Board";
 import Deck from "../../components/Deck/Deck";
-import { useEffect, useState } from "react";
-import "./HomePage.scss";
-import { SnackbarProvider } from "notistack";
 
 const HomePage = ({ token }) => {
   const [deck, setDeck] = useState();
@@ -22,18 +22,23 @@ const HomePage = ({ token }) => {
 
   return (
     <>
-      <SnackbarProvider className="saveround__snackbar" iconVariant={{
-    success: '♥️ ',
-    error: '🃏 '
-  }}>
+      <SnackbarProvider
+        className="saveround__snackbar"
+        iconVariant={{
+          success: "♥️ ",
+          error: "🃏 ",
+        }}
+      >
         <div className="trainer">
-          <Probability className={`trainer__probability`}
+          <Probability
+            className={`trainer__probability`}
             pocketHand={pocketHand}
             boardHand={boardHand}
             probabilityData={probabilityData}
             setProbabilityData={setProbabilityData}
           />
-          <Board className={`trainer__board`}
+          <Board
+            className={`trainer__board`}
             pocketHand={pocketHand}
             setPocketHand={setPocketHand}
             boardHand={boardHand}
@@ -44,7 +49,8 @@ const HomePage = ({ token }) => {
             setDeck={setDeck}
             setProbabilityData={setProbabilityData}
           />
-          <Deck className={`trainer__deck`}
+          <Deck
+            className={`trainer__deck`}
             deck={deck}
             setDeck={setDeck}
             pocketHand={pocketHand}
@@ -61,21 +67,7 @@ const HomePage = ({ token }) => {
 };
 
 export const createDeck = () => {
-  const values = [
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "J",
-    "Q",
-    "K",
-    "A",
-  ];
+  const values = [ "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" ];
   const suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
 
   let deck = [];

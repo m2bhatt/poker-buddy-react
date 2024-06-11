@@ -14,8 +14,8 @@
   }
 
   &__header {
-    background-color: black;
-    color: white;
+    background-color: colors.$bg-color-headers;
+    color: colors.$bg-color-secondary;
   }
 
   &__header-item {

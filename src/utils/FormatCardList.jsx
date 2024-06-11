@@ -10,6 +10,6 @@ const formatCardList = (cards) => {
     const value = card.value === "10" ? "T" : card.value;
     return `${value}${suitMap[card.suit.toLowerCase()]}`;
   });
-}
+};
 
 export default formatCardList;
